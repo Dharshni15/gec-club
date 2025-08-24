@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import Haritha from '@/assets/HARITHA copy.jpg';
 import Dharanidharan from '@/assets/DHARANIDHARAN.jpg';
-import Dheepisha from '@/assets/DHEEEPISHA.jpg';
+import Dheepisha from '@/assets/DHEEPISHA.jpg';
 import Avaneesh from '@/assets/AVANEESH.jpg';
 import Dharshni from '@/assets/DHARSHNI.jpg';
 import Gowthaam from '@/assets/GOWTHAAM.jpg';
@@ -20,29 +20,30 @@ import Deepika from '@/assets/DEEPIKA S.jpg';
 import Ahish from '@/assets/AHISH.jpg';
 import Praneesh from '@/assets/PRANEESH.jpg';
 import Vidulasri from '@/assets/VIDULASRI.jpg';
-import Dhanushya from '@/assets/DHANUSHYA V.jpg';
+import Dhanushya from '@/assets/DHANUSHYA V.jpeg';
 import Harish from '@/assets/HARISH.jpg';
 import AadhiPranesh from '@/assets/AADHI.jpg';  
 import Abhinav2 from '@/assets/ABHIINAV.jpg';
 import Sujhay from '@/assets/SUJHAY.jpg';
 import Monisha from '@/assets/MONISHA.jpg';
-import Bhavani from '@/assets/1_20250812_150850_0000.png';
-import Dharshini from '@/assets/2_20250812_150850_0001.png';
-import Kishore from '@/assets/3_20250812_150850_0002.png';
-import Aswaythi from '@/assets/4_20250812_150850_0003.png';
-import Gobika from '@/assets/5_20250812_150851_0004.png';
+import Bhavani from '@/assets/BHAVANI.jpg';
+import Dharshini from '@/assets/DHARSHINI.jpg';
+import Kishore from '@/assets/KISHORE.jpg';
+import Aswaythi from '@/assets/ASWAYTHI.jpg';
+import Gobika from '@/assets/GOBIKA.jpg';
 import Yohith from '@/assets/6_20250812_150851_0005.png';
-import Sanjay from '@/assets/SANJAY.png';
-import Prajit from '@/assets/PRAJIT.png';
+import Sanjay from '@/assets/SANJAY.jpg';
+import Prajit from '@/assets/PRAJIT.jpg';
 import Kavin from '@/assets/KAVIN.png';
-import Sahana from '@/assets/SAHANA.png';
-import Vedha from '@/assets/VEDHA.png';
-import Nanthitha from '@/assets/NANTHITHA.png';
-import Pranav from '@/assets/PRANAV.png';
-import Dharshan from '@/assets/DHARSHAN.png';
-import Bharani from '@/assets/BHARANI.png';
-import Harsa from '@/assets/HARSA PRIYA.png';
-import Divya from '@/assets/DIVYA.png';
+import Sahana from '@/assets/SAHANA.jpg';
+import Vedha from '@/assets/VEDHA.jpg';
+import Nanthitha from '@/assets/NANTHITHA.jpg';
+import Pranav from '@/assets/PRANAV.jpg';
+import Dharshan from '@/assets/DHARSHAN.jpg';
+import Bharani from '@/assets/BHARANI.jpg';
+import Harsa from '@/assets/HARSA PRIYA.jpg';
+import Divya from '@/assets/DIVYA.jpg';
+import MIDUNAVARSHINI from '@/assets/MIDUNAVARSHINI.jpg';
 import Dinesh from '@/assets/WhatsApp Image 2025-08-16 at 22.00.12_e444af7b.jpg';
 import Mohana from '@/assets/WhatsApp Image 2025-08-16 at 22.00.52_06fc34c9.jpg';
 
@@ -242,7 +243,14 @@ const OfficeBearers = () => {
       year: "Third Year",
       image: Abhinav2,
       
+    },{
+      name: "Ms. S. Midunavarshini",
+      department: "Computer Science Engineering",
+      year: "Third Year",
+      image: MIDUNAVARSHINI,
+      
     },
+
       {
       name: "Ms. E. Sujhay Prajin",
       department: "Artificial Intelligence And Data Science",
@@ -443,7 +451,7 @@ const OfficeBearers = () => {
                         alt={member.name}
                         className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
                       />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+                      
                     </div>
                     
                     <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
