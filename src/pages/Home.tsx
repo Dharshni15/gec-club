@@ -10,6 +10,13 @@ import QuoteOfTheDay from '@/components/QuoteOfTheDay';
 import ContactForm from '@/components/ContactForm';
 import video from '@/assets/WhatsApp Video 2025-08-16 at 22.22.40_7324f47d.mp4';
 import eventsImage from '@/assets/Event 2/Copy of gec2.jpg';
+import { useEffect, useState } from 'react';
+
+// Example ongoing event data (replace with actual ongoing event details)
+const initialOngoingEvent = {
+  name: "Guest Lecture", // <-- Updated event name
+  endTime: "2024-06-15T17:00:00Z" // <-- Keep or update the end time as needed
+};
 
 const Home = () => {
   const navItems = [
@@ -17,9 +24,21 @@ const Home = () => {
     { name: 'Office Bearers', path: '/office-bearers' }
   ];
 
+  const [ongoingEvent, setOngoingEvent] = useState<{ name: string; endTime: string } | null>(initialOngoingEvent);
+
+  useEffect(() => {
+    // Replace with your actual fetch logic or context/store
+    fetch('/api/events/ongoing') // Example endpoint
+      .then(res => res.json())
+      .then(data => {
+        // Expecting { name: string, endTime: string }
+        setOngoingEvent(data);
+      });
+  }, []);
+
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <div className="min-h-screen bg-background">
+      <Navbar className="text-white" />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -39,13 +58,13 @@ const Home = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="space-y-8 fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg">
               Building an
-              <span className="block accent-gradient bg-clip-text text-transparent">
+              <span className="block accent-gradient bg-clip-text text-transparent drop-shadow-lg">
                 Equal Future
               </span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 leading-relaxed">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 leading-relaxed drop-shadow">
               A gender-equal society would be one where the word 'gender' does not exist: where everyone can be themselves.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -65,19 +84,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Event Countdown Section */}
-      <EventCountdown />
-      
       {/* About Us Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 items-center">
             <div className="space-y-8 slide-up">
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
                   About <span className="text-primary">KEC </span>
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-white/80 leading-relaxed drop-shadow">
                   Kongu Engineering College, one of the foremost multi professional research-led Institutions is internationally a recognized leader in professional and career-oriented education. 
                   It provides an integral, inter-disciplinary education - a unique intersection between theory and practice, passion and reason. 
                   The College offers courses of study that are on the frontiers of knowledge and it connects the spiritual and practical dimensions of intellectual life, in a stimulating environment that fosters rigorous scholarship and supportive community. 
@@ -87,11 +103,11 @@ const Home = () => {
               </div>
               
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
                   About Our
                   <span className="text-primary"> Club</span>
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-white/80 leading-relaxed drop-shadow">
                   The Gender Equality Club at Kongu Engineering College works to promote equal opportunities, respect, and inclusiveness among all students on campus. The club creates awareness about the importance of gender balance in education, workplace, and society.
                   <br></br>
                   Through workshops, seminars, discussions, and cultural events, the club encourages students to break stereotypes, respect diversity, and build confidence. It also works hand-in-hand with the Women Development Cell to provide a safe and supportive environment, while motivating both male and female students to contribute positively to society. 
@@ -142,20 +158,24 @@ const Home = () => {
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="space-y-8 fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
               Ready to Make a
-              <span className="block accent-gradient bg-clip-text text-transparent">
+              <span className="block accent-gradient bg-clip-text text-transparent drop-shadow-lg">
                 Difference?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto drop-shadow">
               Join our community of change-makers and help build a more inclusive 
               and equitable future for everyone.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/gallery">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary hover-lift text-lg px-8 py-4">
+                <Button
+                  size="lg"
+                  variant="primary"
+                  className="bg-white text-primary font-bold hover:bg-primary hover:text-white hover-lift text-lg px-8 py-4 border-2 border-white shadow-lg"
+                >
                   View Gallery
                 </Button>
               </Link>
