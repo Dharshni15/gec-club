@@ -7,15 +7,17 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import EventCountdown from '@/components/EventCountdown';
 import QuoteOfTheDay from '@/components/QuoteOfTheDay';
-import ContactForm from '@/components/ContactForm';
+
 import video from '@/assets/WhatsApp Video 2025-08-16 at 22.22.40_7324f47d.mp4';
 import eventsImage from '@/assets/Event 2/Copy of gec2.jpg';
 import { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Example ongoing event data (replace with actual ongoing event details)
 const initialOngoingEvent = {
-  name: "Guest Lecture", // <-- Updated event name
-  endTime: "2024-06-15T17:00:00Z" // <-- Keep or update the end time as needed
+  name: "Prometheus '25 - Intra College Symposium",
+  endTime: "2025-09-13T17:00:00Z"
 };
 
 const Home = () => {
@@ -34,6 +36,10 @@ const Home = () => {
         // Expecting { name: string, endTime: string }
         setOngoingEvent(data);
       });
+  }, []);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true, offset: 100 });
   }, []);
 
   return (
@@ -58,16 +64,16 @@ const Home = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="space-y-8 fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg" data-aos="fade-up">
               Building an
-              <span className="block accent-gradient bg-clip-text text-transparent drop-shadow-lg">
+              <span className="block accent-gradient bg-clip-text text-transparent drop-shadow-lg" data-aos="zoom-in" data-aos-delay="150">
                 Equal Future
               </span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 leading-relaxed drop-shadow">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 leading-relaxed drop-shadow" data-aos="fade-up" data-aos-delay="250">
               A gender-equal society would be one where the word 'gender' does not exist: where everyone can be themselves.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
               <Link to="/events">
                 <Button size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-primary hover-lift text-lg px-8 py-4">
                   View Events
@@ -89,7 +95,7 @@ const Home = () => {
         <Link to="/register">
           <Button
             size="lg"
-            variant="primary"
+            variant="default"
             className="bg-primary text-white font-bold hover:bg-white hover:text-primary hover-lift text-lg px-8 py-4 border-2 border-primary shadow-lg"
           >
             Register
@@ -103,7 +109,7 @@ const Home = () => {
           <div className="rounded-3xl bg-white/90 shadow-xl p-8 md:p-16 animate-fade-in-up transition-all duration-700">
             <div className="grid grid-cols-1 gap-12 items-center">
               <div className="space-y-8">
-                <div className="space-y-4 animate-slide-up">
+                <div className="space-y-4 animate-slide-up" data-aos="fade-up">
                   <h2 className="text-4xl md:text-5xl font-bold text-black drop-shadow-lg">
                     About <span className="text-primary">KEC </span>
                   </h2>
@@ -116,7 +122,7 @@ const Home = () => {
                   </p>
                 </div>
                 
-                <div className="space-y-4 animate-slide-up delay-200">
+                <div className="space-y-4 animate-slide-up delay-200" data-aos="fade-up" data-aos-delay="150">
                   <h2 className="text-4xl md:text-5xl font-bold text-black drop-shadow-lg">
                     About Our
                     <span className="text-primary"> Club</span>
@@ -131,7 +137,7 @@ const Home = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
                   <div className="space-y-2">
                     <Link to="/office-bearers">
-                      <div className="w-12 h-12 button-gradient rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-200">
+                      <div className="w-12 h-12 button-gradient rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-200" data-aos="zoom-in">
                         <Users className="w-6 h-6 text-white" />
                       </div>
                     </Link>
@@ -141,7 +147,7 @@ const Home = () => {
                   
                   <div className="space-y-2">
                     <Link to="/events">
-                      <div className="w-12 h-12 button-gradient rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-200">
+                      <div className="w-12 h-12 button-gradient rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-200" data-aos="zoom-in" data-aos-delay="100">
                         <Calendar className="w-6 h-6 text-white" />
                       </div>
                     </Link>
@@ -168,27 +174,27 @@ const Home = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${eventsImage})` }}
         >
-          <div className="absolute inset-0 bg-primary/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-primary/80"></div>
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="space-y-8 fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+            <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg" data-aos="fade-up">
               Ready to Make a
-              <span className="block accent-gradient bg-clip-text text-transparent drop-shadow-lg">
+              <span className="block accent-gradient bg-clip-text text-transparent drop-shadow-lg" data-aos="zoom-in" data-aos-delay="150">
                 Difference?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto drop-shadow">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto drop-shadow" data-aos="fade-up" data-aos-delay="250">
               Join our community of change-makers and help build a more inclusive 
               and equitable future for everyone.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
               <Link to="/gallery">
                 <Button
                   size="lg"
-                  variant="primary"
+                  variant="default"
                   className="bg-white text-primary font-bold hover:bg-primary hover:text-white hover-lift text-lg px-8 py-4 border-2 border-white shadow-lg"
                 >
                   View Gallery
@@ -198,9 +204,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <ContactForm />
 
       <Footer />
       <ScrollToTop />

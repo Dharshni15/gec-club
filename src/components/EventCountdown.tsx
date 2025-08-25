@@ -14,8 +14,8 @@ const EventCountdown = () => {
   const [countdown, setCountdown] = useState<CountdownTime>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isVisible, setIsVisible] = useState(false);
 
-  // Next major event - Prometheus Symposium 2025
-  const eventDate = new Date('2025-09-20T09:00:00').getTime();
+  // Next major event - Prometheus Symposium 2025 (Ongoing on Sep 13)
+  const eventDate = new Date('2025-09-13T09:00:00').getTime();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -85,7 +85,7 @@ const EventCountdown = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>September 20, 2025</span>
+                <span>September 13, 2025</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />

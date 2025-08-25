@@ -18,7 +18,6 @@ interface EventItem {
 }
 
 const EventRegistration: React.FC = () => {
-  const [selectedEvents, setSelectedEvents] = useState<Record<string, string>>({});
   const [showRules, setShowRules] = useState(false);
 
   const eventClusters: EventCluster[] = [
@@ -69,21 +68,9 @@ const EventRegistration: React.FC = () => {
     }
   ];
 
-  const handleEventSelect = (clusterId: string, eventId: string) => {
-    setSelectedEvents(prev => ({
-      ...prev,
-      [clusterId]: eventId
-    }));
-  };
-
-  const handleRegister = (clusterId: string, formUrl: string) => {
-    const eventId = selectedEvents[clusterId];
-    if (eventId) {
-      // Redirect to the Google Form
-      window.open(formUrl, '_blank');
-    } else {
-      alert('Please select an event first');
-    }
+  const handleRegister = (formUrl: string) => {
+    // Redirect to the Google Form
+    window.open(formUrl, '_blank');
   };
 
   const toggleRules = () => {
@@ -93,6 +80,7 @@ const EventRegistration: React.FC = () => {
   return (
     <div className="event-registration-container">
       <Navbar />
+      
       <div className="header">
         <h1>Event Registration</h1>
         <p>Register for exciting events happening today!</p>
@@ -133,46 +121,46 @@ const EventRegistration: React.FC = () => {
         </div>
       )}
       
-      <div className="form-container">
-        {eventClusters.map(cluster => (
-          <div 
-            key={cluster.id} 
-            className={`cluster cluster-${cluster.id.slice(-1)}`}
-            style={{ borderLeftColor: cluster.color }}
-          >
-            <div className="cluster-title">
-              <h2>{cluster.title}</h2>
-              <span className="time-badge" style={{ backgroundColor: cluster.color }}>
-                {cluster.time}
-              </span>
-            </div>
-            
-            <div className="events-container">
-              {cluster.events.map(event => (
-                <div 
-                  key={event.id}
-                  className={`event-item ${selectedEvents[cluster.id] === event.id ? 'selected' : ''}`}
-                  onClick={() => handleEventSelect(cluster.id, event.id)}
-                >
-                  <div className="event-icon">{event.icon}</div>
-                  <div className="event-details">
-                    <div className="event-name">{event.name}</div>
-                    <div className="event-time">{event.time}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            <button 
-              className="btn-register"
-              onClick={() => handleRegister(cluster.id, cluster.formUrl)}
-              style={{ backgroundColor: cluster.color }}
-              disabled={!selectedEvents[cluster.id]}
+      <div className="content-wrapper">
+        <div className="form-container">
+          {eventClusters.map(cluster => (
+            <div 
+              key={cluster.id} 
+              className={`cluster cluster-${cluster.id.slice(-1)}`}
+              style={{ borderLeftColor: cluster.color }}
             >
-              Register for {cluster.title}
-            </button>
-          </div>
-        ))}
+              <div className="cluster-title">
+                <h2>{cluster.title}</h2>
+                <span className="time-badge" style={{ backgroundColor: cluster.color }}>
+                  {cluster.time}
+                </span>
+              </div>
+              
+              <div className="events-container">
+                {cluster.events.map(event => (
+                  <div 
+                    key={event.id}
+                    className="event-item"
+                  >
+                    <div className="event-icon">{event.icon}</div>
+                    <div className="event-details">
+                      <div className="event-name">{event.name}</div>
+                      <div className="event-time">{event.time}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <button 
+                className="btn-register"
+                onClick={() => handleRegister(cluster.formUrl)}
+                style={{ backgroundColor: cluster.color }}
+              >
+                Register for {cluster.title}
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
       
       <style>{`
@@ -201,6 +189,13 @@ const EventRegistration: React.FC = () => {
         .event-registration-container {
           background: linear-gradient(135deg, #e9ecef 0%, #f1f3f5 100%);
           min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .content-wrapper {
+          width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -372,17 +367,11 @@ const EventRegistration: React.FC = () => {
           align-items: center;
           box-shadow: 0 3px 10px rgba(0, 6, 79, 0.10);
           transition: var(--transition);
-          cursor: pointer;
         }
         
         .event-item:hover {
           transform: translateY(-3px);
           box-shadow: 0 6px 16px rgba(0, 6, 79, 0.16);
-        }
-        
-        .event-item.selected {
-          background: rgba(32, 58, 159, 0.1);
-          border: 1px solid var(--primary);
         }
         
         .event-icon {
@@ -420,22 +409,14 @@ const EventRegistration: React.FC = () => {
           box-shadow: 0 4px 12px rgba(32, 58, 159, 0.35);
         }
         
-        .btn-register:hover:not(:disabled) {
+        .btn-register:hover {
           background: linear-gradient(135deg, var(--secondary), var(--primary));
           transform: translateY(-2px);
           box-shadow: 0 6px 18px rgba(0, 6, 79, 0.45);
         }
         
-        .btn-register:active:not(:disabled) {
+        .btn-register:active {
           transform: translateY(0);
-        }
-        
-        .btn-register:disabled {
-          background: var(--gray);
-          cursor: not-allowed;
-          opacity: 0.7;
-          transform: none;
-          box-shadow: none;
         }
         
         @keyframes fadeIn {
@@ -480,6 +461,10 @@ const EventRegistration: React.FC = () => {
           
           .rules-content {
             padding: 20px;
+          }
+          
+          .content-wrapper {
+            padding: 10px;
           }
         }
       `}</style>
