@@ -40,9 +40,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-lg">GEC</span>
-            </div>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+  <img src="/favicon.jpg" alt="icon" className="w-full h-full object-cover rounded-lg" />
+</div>
             <div className="hidden sm:block">
               <span className="text-xl font-bold text-white">
                 Gender Equality Club
