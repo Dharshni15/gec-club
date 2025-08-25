@@ -193,7 +193,7 @@ const Events = () => {
     }
   };
 
-  const ongoingEvents = events.filter(event => event.status === 'upcoming');
+  const ongoingEvents = events.filter(event => event.status === 'ongoing');
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -218,7 +218,7 @@ const Events = () => {
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
                   <div>
                     <span className="inline-block px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full mb-3 md:mb-0">
-                      Upcoming Event
+                      Ongoing Event
                     </span>
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-2">
                       {ongoingEvents[0].title}
