@@ -6,7 +6,6 @@ import 'aos/dist/aos.css';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
 
-
 const Events = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -33,7 +32,6 @@ const Events = () => {
       status: "completed",
       category: "Event",
       image: "/api/placeholder/400/200?text=Inaugural+Function",
-      attendees: 150,
       highlights: ["Expert Speakers", "Networking", "Refreshments"]
     },
     {
@@ -46,7 +44,6 @@ const Events = () => {
       status: "ongoing",
       category: "Symposium",
       image: "/api/placeholder/400/200?text=Prometheus+25",
-      attendees: 200,
       highlights: ["Technical Presentations", "Competitions", "Prizes"]
     },
     {
@@ -59,7 +56,6 @@ const Events = () => {
       status: "completed",
       category: "Lecture",
       image: "/api/placeholder/400/200?text=Guest+Lecture",
-      attendees: 80,
       highlights: ["Industry Expert", "Q&A Session", "Certificate"]
     },
     {
@@ -72,7 +68,6 @@ const Events = () => {
       status: "upcoming",
       category: "Awareness",
       image: "/api/placeholder/400/200?text=Rudra+25",
-      attendees: 120,
       highlights: ["Awareness Program", "Cultural Activities", "Discussion"]
     },
     {
@@ -85,7 +80,6 @@ const Events = () => {
       status: "upcoming",
       category: "Art",
       image: "/api/placeholder/400/200?text=Equality+Art",
-      attendees: 90,
       highlights: ["Art Exhibition", "Workshops", "Live Performances"]
     },
     {
@@ -98,7 +92,6 @@ const Events = () => {
       status: "upcoming",
       category: "Workshop",
       image: "/api/placeholder/400/200?text=AI+Workshop",
-      attendees: 60,
       highlights: ["Hands-on Training", "AI Tools", "Project Work"]
     },
     {
@@ -111,7 +104,6 @@ const Events = () => {
       status: "upcoming",
       category: "Hackathon",
       image: "/api/placeholder/400/200?text=Hackathon",
-      attendees: 100,
       highlights: ["24-hour Challenge", "Mentorship", "Prizes"]
     },
     {
@@ -124,7 +116,6 @@ const Events = () => {
       status: "upcoming",
       category: "Awareness",
       image: "/api/placeholder/400/200?text=Aurora+25",
-      attendees: 150,
       highlights: ["Celebration", "Awareness", "Cultural Program"]
     },
     {
@@ -137,7 +128,6 @@ const Events = () => {
       status: "upcoming",
       category: "Awareness",
       image: "/api/placeholder/400/200?text=Awareness+Program",
-      attendees: 75,
       highlights: ["Awareness", "Discussion", "Materials"]
     },
     {
@@ -150,7 +140,6 @@ const Events = () => {
       status: "upcoming",
       category: "Event",
       image: "/api/placeholder/400/200?text=Valedictory+Function",
-      attendees: 200,
       highlights: ["Closing Ceremony", "Awards", "Cultural Program"]
     }
   ];
@@ -225,12 +214,12 @@ const Events = () => {
                     </h2>
                     <p className="text-gray-600 mt-2">{ongoingEvents[0].description}</p>
                   </div>
-                    <button
-                      className="mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-white py-2 px-6 rounded-md transition-colors"
-                      onClick={() => navigate('/RegistrationForm')}
-                    >
-                      Register
-                    </button>
+                  <button
+                    className="mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-white py-2 px-6 rounded-md transition-colors"
+                    onClick={() => navigate('/RegistrationForm')}
+                  >
+                    Register Now
+                  </button>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -406,13 +395,8 @@ const Events = () => {
                     </div>
                   </div>
 
-                  {/* Attendees Count */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <Users className="w-4 h-4" />
-                      <span>{event.attendees} attendees</span>
-                    </div>
-                  </div>
+                  
+                  
                   
                   <div className="mt-6">
                     {event.status === 'upcoming' && (
@@ -426,13 +410,16 @@ const Events = () => {
                     {event.status === 'ongoing' && (
                       <button
                         className="w-full bg-accent hover:bg-accent/90 text-white py-2 px-4 rounded-md transition-colors"
-                        onClick={() => navigate('/gallery')}
+                        onClick={() => navigate('/RegistrationForm')}
                       >
-                        View Details
+                        Register Now
                       </button>
                     )}
                     {event.status === 'completed' && (
-                      <button className="w-full bg-muted-foreground hover:bg-muted-foreground/80 text-white py-2 px-4 rounded-md transition-colors">
+                      <button 
+                        className="w-full bg-muted-foreground hover:bg-muted-foreground/80 text-white py-2 px-4 rounded-md transition-colors"
+                        onClick={() => navigate('/gallery')}
+                      >
                         View Recap
                       </button>
                     )}
