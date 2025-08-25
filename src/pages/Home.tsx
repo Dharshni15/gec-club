@@ -90,19 +90,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Example: Add Register button below the hero section */}
-      <div className="flex justify-center mt-8">
-        <Link to="/register">
-          <Button
-            size="lg"
-            variant="default"
-            className="bg-primary text-white font-bold hover:bg-white hover:text-primary hover-lift text-lg px-8 py-4 border-2 border-primary shadow-lg"
-          >
-            Register
-          </Button>
-        </Link>
-      </div>
-
+  
+      
       {/* About Us Section */}
       <section className="py-20 bg-background">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
