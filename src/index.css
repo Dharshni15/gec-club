@@ -6,109 +6,110 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors - Perfect Lotus Theme */
-    --background: 300 25% 98%;
-    --foreground: 240 10% 15%;
+    /* Professional Blue & Grey Palette */
+    /* Backgrounds and foreground */
+    --background: 210 17% 95%; /* light grey #E9ECEF */
+    --foreground: 0 0% 17%;   /* dark grey #2B2B2B */
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
+    --card-foreground: 0 0% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover-foreground: 0 0% 17%;
 
-    /* Primary - Deep Teal from Lotus Leaves */
-    --primary: 180 75% 30%;
+    /* Blues */
+    --primary: 228 67% 37%;           /* royal blue #203A9F */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 180 65% 40%;
-    --primary-glow: 180 100% 50%;
+    --primary-light: 231 47% 62%;      /* steel blue #6F7CCD */
+    --primary-glow: 231 47% 62%;
 
-    /* Secondary - Medium Teal */
-    --secondary: 180 60% 45%;
+    --secondary: 236 100% 15%;        /* deep navy #00064F */
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 180 50% 55%;
+    --secondary-light: 228 67% 45%;
 
-    /* Accent - Vibrant Pink from Lotus Petals */
-    --accent: 330 90% 70%;
+    /* Accent uses softened steel blue for subtle emphasis */
+    --accent: 231 47% 62%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 330 80% 80%;
+    --accent-light: 231 47% 72%;
 
-    /* Muted - Soft Mauve/Plum */
-    --muted: 300 20% 96%;
-    --muted-foreground: 300 10% 50%;
+    /* Muted greys */
+    --muted: 210 14% 92%;              /* soft grey */
+    --muted-foreground: 0 0% 43%;      /* medium grey #6D6D6D */
 
-    /* Destructive - Soft Red */
-    --destructive: 0 84.2% 60.2%;
+    /* Destructive - keep accessible red */
+    --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Border - Pale Lavender */
-    --border: 300 25% 90%;
-    --input: 300 25% 95%;
-    --ring: 180 75% 30%;
+    /* Borders and inputs */
+    --border: 210 12% 85%;
+    --input: 210 16% 93%;
+    --ring: 228 67% 37%;
 
     --radius: 0.75rem;
 
-    /* Beautiful Gradients - Perfect Lotus-Inspired */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--primary-light) / 0.08) 0%, hsl(var(--accent-light) / 0.08) 100%);
+    /* Gradients aligned to palette */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 50%, hsl(var(--primary-light)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--secondary) / 0.06) 0%, hsl(var(--primary-light) / 0.08) 100%);
     --gradient-button: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
 
-    /* Elegant Shadows */
-    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.08);
-    --shadow-medium: 0 8px 30px hsl(var(--primary) / 0.12);
-    --shadow-strong: 0 20px 40px hsl(var(--primary) / 0.15);
-    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.25);
+    /* Shadows tuned for elegance */
+    --shadow-soft: 0 6px 18px hsl(228 30% 20% / 0.08);
+    --shadow-medium: 0 10px 28px hsl(228 30% 20% / 0.12);
+    --shadow-strong: 0 18px 40px hsl(228 30% 20% / 0.16);
+    --shadow-glow: 0 0 28px hsl(var(--primary) / 0.28);
 
-    /* Smooth Transitions */
+    /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar tokens */
+    --sidebar-background: 210 17% 96%;
+    --sidebar-foreground: 0 0% 17%;
+    --sidebar-primary: 228 67% 37%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 16% 93%;
+    --sidebar-accent-foreground: 0 0% 17%;
+    --sidebar-border: 210 12% 85%;
+    --sidebar-ring: 228 67% 37%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 228 30% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 228 30% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 228 30% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 231 47% 62%;
+    --primary-foreground: 236 100% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 236 100% 15%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 216 12% 75%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 228 67% 37%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62% 40%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 10% 22%;
+    --input: 220 10% 22%;
+    --ring: 228 67% 37%;
+    --sidebar-background: 228 30% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 231 47% 62%;
+    --sidebar-primary-foreground: 236 100% 15%;
+    --sidebar-accent: 228 30% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 228 30% 12%;
+    --sidebar-ring: 228 67% 37%;
   }
 }
 

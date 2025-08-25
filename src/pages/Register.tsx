@@ -1,11 +1,12 @@
- import React, { useState } from 'react';
- import Navbar from '@/components/Navbar';
+import React, { useState } from 'react';
+import Navbar from '@/components/Navbar';
 
 interface EventCluster {
   id: string;
   title: string;
   time: string;
   color: string;
+  formUrl: string;
   events: EventItem[];
 }
 
@@ -25,7 +26,8 @@ const EventRegistration: React.FC = () => {
       id: 'cluster1',
       title: 'Morning Events',
       time: '9:00 AM - 10:30 AM',
-      color: '#4361ee',
+      color: '#203a9f',
+      formUrl: 'https://forms.gle/pHnFCTRNCKSEED3V8',
       events: [
         { id: 'paper-presentation', name: 'Paper Presentation', time: '9:30 AM - 10:30 AM', icon: '📝' },
         { id: 'project-presentation', name: 'Project Presentation', time: '9:30 AM - 10:30 AM', icon: '💻' },
@@ -36,7 +38,8 @@ const EventRegistration: React.FC = () => {
       id: 'cluster2',
       title: 'Late Morning Events',
       time: '11:00 AM - 12:30 PM',
-      color: '#f72585',
+      color: '#6f7ccd',
+      formUrl: 'https://forms.gle/pm8Mak7Sc52tEL4Y8',
       events: [
         { id: 'ui-ux-design', name: 'UI/UX Design using Figma', time: '11:00 AM - 12:30 PM', icon: '🎨' },
         { id: 'code-debugging', name: 'Code Debugging', time: '11:00 AM - 12:30 PM', icon: '🐛' },
@@ -47,7 +50,8 @@ const EventRegistration: React.FC = () => {
       id: 'cluster3',
       title: 'Afternoon Events',
       time: '1:30 PM - 2:30 PM',
-      color: '#4cc9f0',
+      color: '#1e2adb',
+      formUrl: 'https://forms.gle/ti15g5tqx5nyAJQTA',
       events: [
         { id: 'logo-design', name: 'Logo Design/Poster Design', time: '1:30 PM - 2:30 PM', icon: '✏️' },
         { id: 'connections', name: 'Connections', time: '1:30 PM - 2:30 PM', icon: '🧩' }
@@ -57,7 +61,8 @@ const EventRegistration: React.FC = () => {
       id: 'cluster4',
       title: 'Treasure Hunt',
       time: '2:30 PM - 3:30 PM',
-      color: '#f9c74f',
+      color: '#00064f',
+      formUrl: 'https://forms.gle/oT2KW9dsRAFc92Sh6',
       events: [
         { id: 'treasure-hunt', name: 'Treasure Hunt', time: '2:30 PM - 3:30 PM', icon: '🏆' }
       ]
@@ -71,10 +76,11 @@ const EventRegistration: React.FC = () => {
     }));
   };
 
-  const handleRegister = (clusterId: string) => {
+  const handleRegister = (clusterId: string, formUrl: string) => {
     const eventId = selectedEvents[clusterId];
     if (eventId) {
-      alert(`Registered for ${eventId} in ${clusterId}`);
+      // Redirect to the Google Form
+      window.open(formUrl, '_blank');
     } else {
       alert('Please select an event first');
     }
@@ -85,7 +91,7 @@ const EventRegistration: React.FC = () => {
   };
 
   return (
-    <div className="event-registration">
+    <div className="event-registration-container">
       <Navbar />
       <div className="header">
         <h1>Event Registration</h1>
@@ -127,39 +133,41 @@ const EventRegistration: React.FC = () => {
         </div>
       )}
       
-      <div className="clusters-container">
+      <div className="form-container">
         {eventClusters.map(cluster => (
           <div 
             key={cluster.id} 
-            className="cluster"
+            className={`cluster cluster-${cluster.id.slice(-1)}`}
             style={{ borderLeftColor: cluster.color }}
           >
-            <div className="cluster-header">
+            <div className="cluster-title">
               <h2>{cluster.title}</h2>
               <span className="time-badge" style={{ backgroundColor: cluster.color }}>
                 {cluster.time}
               </span>
             </div>
             
-            <div className="events-grid">
+            <div className="events-container">
               {cluster.events.map(event => (
                 <div 
                   key={event.id}
-                  className={`event-card ${selectedEvents[cluster.id] === event.id ? 'selected' : ''}`}
+                  className={`event-item ${selectedEvents[cluster.id] === event.id ? 'selected' : ''}`}
                   onClick={() => handleEventSelect(cluster.id, event.id)}
-                  style={{ borderColor: cluster.color }}
                 >
                   <div className="event-icon">{event.icon}</div>
-                  <div className="event-name">{event.name}</div>
-                  <div className="event-time">{event.time}</div>
+                  <div className="event-details">
+                    <div className="event-name">{event.name}</div>
+                    <div className="event-time">{event.time}</div>
+                  </div>
                 </div>
               ))}
             </div>
             
             <button 
-              className="register-btn"
-              onClick={() => handleRegister(cluster.id)}
+              className="btn-register"
+              onClick={() => handleRegister(cluster.id, cluster.formUrl)}
               style={{ backgroundColor: cluster.color }}
+              disabled={!selectedEvents[cluster.id]}
             >
               Register for {cluster.title}
             </button>
@@ -168,38 +176,54 @@ const EventRegistration: React.FC = () => {
       </div>
       
       <style>{`
-        * {
+        .event-registration-container {
+          --primary: #203a9f;
+          --secondary: #00064f;
+          --accent: #6f7ccd;
+          --light: #e9ecef;
+          --dark: #2b2b2b;
+          --success: #1e2adb;
+          --warning: #d6a444;
+          --danger: #d9534f;
+          --gray: #6d6d6d;
+          --border-radius: 12px;
+          --box-shadow: 0 8px 20px rgba(0, 6, 79, 0.12);
+          --transition: all 0.3s ease;
+        }
+        
+        .event-registration-container * {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        .event-registration {
-          background: linear-gradient(135deg, #ccafebff 0%, #7fcdcdff 100%);
+        .event-registration-container {
+          background: linear-gradient(135deg, #e9ecef 0%, #f1f3f5 100%);
           min-height: 100vh;
-          padding: 20px;
           display: flex;
           flex-direction: column;
           align-items: center;
+          padding: 20px;
         }
         
         .header {
+          background: linear-gradient(135deg, var(--secondary), var(--primary));
+          color: #ffffff;
+          padding: 25px;
           text-align: center;
-          color: white;
-          margin-bottom: 30px;
-          max-width: 800px;
-          position: relative;
+          width: 100%;
+          max-width: 900px;
+          border-radius: var(--border-radius) var(--border-radius) 0 0;
+          margin-bottom: 0;
         }
         
         .header h1 {
-          font-size: 2.5rem;
+          font-size: 2.2rem;
           margin-bottom: 10px;
-          font-weight: 700;
         }
         
         .header p {
-          font-size: 1.2rem;
           opacity: 0.9;
           margin-bottom: 15px;
         }
@@ -212,7 +236,7 @@ const EventRegistration: React.FC = () => {
           border-radius: 30px;
           font-weight: 600;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: var(--transition);
           backdrop-filter: blur(5px);
         }
         
@@ -248,13 +272,13 @@ const EventRegistration: React.FC = () => {
         }
         
         .rules-content h2 {
-          color: #92a0daff;
+          color: var(--primary);
           margin-bottom: 20px;
           text-align: center;
         }
         
         .rules-list h3 {
-          color: #816bb3ff;
+          color: var(--secondary);
           margin: 15px 0 10px;
         }
         
@@ -269,7 +293,7 @@ const EventRegistration: React.FC = () => {
         }
         
         .close-rules {
-          background: #87e3edff;
+          background: var(--primary);
           color: white;
           border: none;
           padding: 10px 25px;
@@ -278,45 +302,50 @@ const EventRegistration: React.FC = () => {
           cursor: pointer;
           display: block;
           margin: 20px auto 0;
-          transition: all 0.3s ease;
+          transition: var(--transition);
         }
         
         .close-rules:hover {
-          background: #8e7db5ff;
+          background: var(--secondary);
           transform: translateY(-2px);
         }
         
-        .clusters-container {
+        .form-container {
+          padding: 30px;
           width: 100%;
-          max-width: 1000px;
+          max-width: 900px;
+          background: #ffffff;
+          border-radius: 0 0 var(--border-radius) var(--border-radius);
         }
         
         .cluster {
-          background: white;
-          border-radius: 15px;
+          background: var(--light);
+          border-radius: var(--border-radius);
           padding: 25px;
-          margin-bottom: 30px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          margin-bottom: 25px;
+          box-shadow: 0 4px 12px rgba(32, 58, 159, 0.10);
           border-left: 5px solid;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition: var(--transition);
+          animation: slideIn 0.5s ease;
         }
         
         .cluster:hover {
           transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 12px 28px rgba(0, 6, 79, 0.18);
         }
         
-        .cluster-header {
+        .cluster-title {
+          color: var(--secondary);
+          margin-bottom: 15px;
+          padding-bottom: 10px;
+          border-bottom: 2px solid var(--secondary);
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 20px;
-          padding-bottom: 15px;
-          border-bottom: 2px solid #eee;
         }
         
-        .cluster-header h2 {
-          color: #333;
+        .cluster-title h2 {
+          color: var(--secondary);
           font-size: 1.5rem;
         }
         
@@ -328,70 +357,85 @@ const EventRegistration: React.FC = () => {
           font-weight: 600;
         }
         
-        .events-grid {
+        .events-container {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
-          margin-bottom: 25px;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 15px;
+          margin-bottom: 20px;
         }
         
-        .event-card {
-          background: #f8f9fa;
-          border-radius: 12px;
-          padding: 20px;
-          text-align: center;
+        .event-item {
+          background: #ffffff;
+          border-radius: 8px;
+          padding: 15px;
+          display: flex;
+          align-items: center;
+          box-shadow: 0 3px 10px rgba(0, 6, 79, 0.10);
+          transition: var(--transition);
           cursor: pointer;
-          transition: all 0.3s ease;
-          border: 2px solid transparent;
         }
         
-        .event-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        .event-item:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 6px 16px rgba(0, 6, 79, 0.16);
         }
         
-        .event-card.selected {
-          background: rgba(67, 97, 238, 0.1);
-          border-color: #7eafe3ff;
+        .event-item.selected {
+          background: rgba(32, 58, 159, 0.1);
+          border: 1px solid var(--primary);
         }
         
         .event-icon {
-          font-size: 2.5rem;
-          margin-bottom: 15px;
+          font-size: 2rem;
+          margin-right: 15px;
+        }
+        
+        .event-details {
+          flex: 1;
         }
         
         .event-name {
           font-weight: 600;
           font-size: 1.1rem;
-          margin-bottom: 8px;
-          color: #333;
+          margin-bottom: 5px;
+          color: var(--dark);
         }
         
         .event-time {
-          color: #666;
+          color: var(--gray);
           font-size: 0.9rem;
         }
         
-        .register-btn {
-          color: white;
+        .btn-register {
+          background: linear-gradient(135deg, var(--primary), var(--secondary));
+          color: #ffffff;
           border: none;
-          padding: 12px 30px;
+          padding: 12px 25px;
           border-radius: 30px;
           font-weight: 600;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: var(--transition);
           display: block;
-          margin: 0 auto;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          margin-left: auto;
+          box-shadow: 0 4px 12px rgba(32, 58, 159, 0.35);
         }
         
-        .register-btn:hover {
+        .btn-register:hover:not(:disabled) {
+          background: linear-gradient(135deg, var(--secondary), var(--primary));
           transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 6px 18px rgba(0, 6, 79, 0.45);
         }
         
-        .register-btn:active {
+        .btn-register:active:not(:disabled) {
           transform: translateY(0);
+        }
+        
+        .btn-register:disabled {
+          background: var(--gray);
+          cursor: not-allowed;
+          opacity: 0.7;
+          transform: none;
+          box-shadow: none;
         }
         
         @keyframes fadeIn {
@@ -410,8 +454,21 @@ const EventRegistration: React.FC = () => {
           }
         }
         
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateX(-20px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        
         @media (max-width: 768px) {
-          .cluster-header {
+          .events-container {
+            grid-template-columns: 1fr;
+          }
+          
+          .form-container {
+            padding: 20px;
+          }
+          
+          .cluster-title {
             flex-direction: column;
             align-items: flex-start;
             gap: 10px;
@@ -419,10 +476,6 @@ const EventRegistration: React.FC = () => {
           
           .time-badge {
             align-self: flex-start;
-          }
-          
-          .events-grid {
-            grid-template-columns: 1fr;
           }
           
           .rules-content {
