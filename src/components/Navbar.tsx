@@ -33,18 +33,18 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-border shadow-lg' 
+        ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-700 shadow-lg' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-white font-bold text-lg">GEC</span>
             </div>
             <div className="hidden sm:block">
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-white">
                 Gender Equality Club
               </span>
             </div>
@@ -56,17 +56,17 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-primary group ${
+                className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 group ${
                   isActivePath(item.path)
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-primary'
+                    ? 'text-white'
+                    : 'text-gray-300 hover:text-white'
                 }`}
               >
                 {item.name}
                 {isActivePath(item.path) && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></span>
                 )}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full rounded-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full rounded-full"></span>
               </Link>
             ))}
 
@@ -75,12 +75,12 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="w-10 h-10 p-0 rounded-full hover:bg-muted transition-colors"
+              className="w-10 h-10 p-0 rounded-full hover:bg-gray-800 transition-colors text-white"
             >
               {theme === 'dark' ? (
-                <Sun className="h-5 w-5 text-yellow-500" />
+                <Sun className="h-5 w-5 text-yellow-300" />
               ) : (
-                <Moon className="h-5 w-5 text-blue-600" />
+                <Moon className="h-5 w-5 text-blue-300" />
               )}
             </Button>
           </div>
@@ -92,12 +92,12 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="w-10 h-10 p-0 rounded-full hover:bg-muted transition-colors"
+              className="w-10 h-10 p-0 rounded-full hover:bg-gray-800 transition-colors text-white"
             >
               {theme === 'dark' ? (
-                <Sun className="h-5 w-5 text-yellow-500" />
+                <Sun className="h-5 w-5 text-yellow-300" />
               ) : (
-                <Moon className="h-5 w-5 text-blue-600" />
+                <Moon className="h-5 w-5 text-blue-300" />
               )}
             </Button>
             
@@ -105,7 +105,7 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="w-10 h-10 p-0 rounded-full hover:bg-muted transition-colors"
+              className="w-10 h-10 p-0 rounded-full hover:bg-gray-800 transition-colors text-white"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -119,10 +119,10 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`block px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+                className={`block px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-white ${
                   isActivePath(item.path)
-                    ? 'text-primary bg-primary/10 border-l-4 border-l-primary'
-                    : 'text-muted-foreground hover:text-primary hover:bg-muted'
+                    ? 'bg-blue-900/30 border-l-4 border-l-blue-400'
+                    : 'hover:bg-gray-800'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >

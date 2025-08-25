@@ -9,7 +9,7 @@ import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
 import OfficeBearers from "./pages/OfficeBearers";
 import NotFound from "./pages/NotFound";
-import RegistrationForm from "./pages/RegistrationForm";
+import RegistrationForm from "./pages/Register";
 
 const queryClient = new QueryClient();
 

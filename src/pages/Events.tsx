@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
 
+
 const Events = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -224,12 +225,12 @@ const Events = () => {
                     </h2>
                     <p className="text-gray-600 mt-2">{ongoingEvents[0].description}</p>
                   </div>
-                  <button
-                    className="mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-white py-2 px-6 rounded-md transition-colors"
-                    onClick={() => navigate('/gallery')}
-                  >
-                    View Details
-                  </button>
+                    <button
+                      className="mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-white py-2 px-6 rounded-md transition-colors"
+                      onClick={() => navigate('/RegistrationForm')}
+                    >
+                      Register
+                    </button>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

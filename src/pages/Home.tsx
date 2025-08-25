@@ -84,55 +84,70 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Example: Add Register button below the hero section */}
+      <div className="flex justify-center mt-8">
+        <Link to="/register">
+          <Button
+            size="lg"
+            variant="primary"
+            className="bg-primary text-white font-bold hover:bg-white hover:text-primary hover-lift text-lg px-8 py-4 border-2 border-primary shadow-lg"
+          >
+            Register
+          </Button>
+        </Link>
+      </div>
+
       {/* About Us Section */}
       <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 items-center">
-            <div className="space-y-8 slide-up">
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-                  About <span className="text-primary">KEC </span>
-                </h2>
-                <p className="text-lg text-white/80 leading-relaxed drop-shadow">
-                  Kongu Engineering College, one of the foremost multi professional research-led Institutions is internationally a recognized leader in professional and career-oriented education. 
-                  It provides an integral, inter-disciplinary education - a unique intersection between theory and practice, passion and reason. 
-                  The College offers courses of study that are on the frontiers of knowledge and it connects the spiritual and practical dimensions of intellectual life, in a stimulating environment that fosters rigorous scholarship and supportive community. 
-                  This Institute is a great possession of the committed Trust called 'The Kongu Vellalar Institute of Technology Trust' in Erode District, Tamilnadu. 
-                  The noble Trust has taken the institute to greater heights since its inception in 1983 and has established the college as a forum for imparting value based education for men and women.
-                </p>
-              </div>
-              
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-                  About Our
-                  <span className="text-primary"> Club</span>
-                </h2>
-                <p className="text-lg text-white/80 leading-relaxed drop-shadow">
-                  The Gender Equality Club at Kongu Engineering College works to promote equal opportunities, respect, and inclusiveness among all students on campus. The club creates awareness about the importance of gender balance in education, workplace, and society.
-                  <br></br>
-                  Through workshops, seminars, discussions, and cultural events, the club encourages students to break stereotypes, respect diversity, and build confidence. It also works hand-in-hand with the Women Development Cell to provide a safe and supportive environment, while motivating both male and female students to contribute positively to society. 
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Link to="/office-bearers">
-                    <div className="w-12 h-12 button-gradient rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-200">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                  </Link>
-                  <h3 className="text-xl font-semibold text-foreground">50+ Members</h3>
-                  <p className="text-muted-foreground">Active student community</p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl bg-white/90 shadow-xl p-8 md:p-16 animate-fade-in-up transition-all duration-700">
+            <div className="grid grid-cols-1 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="space-y-4 animate-slide-up">
+                  <h2 className="text-4xl md:text-5xl font-bold text-black drop-shadow-lg">
+                    About <span className="text-primary">KEC </span>
+                  </h2>
+                  <p className="text-lg text-black leading-relaxed drop-shadow">
+                    Kongu Engineering College, one of the foremost multi professional research-led Institutions is internationally a recognized leader in professional and career-oriented education. 
+                    It provides an integral, inter-disciplinary education - a unique intersection between theory and practice, passion and reason. 
+                    The College offers courses of study that are on the frontiers of knowledge and it connects the spiritual and practical dimensions of intellectual life, in a stimulating environment that fosters rigorous scholarship and supportive community. 
+                    This Institute is a great possession of the committed Trust called 'The Kongu Vellalar Institute of Technology Trust' in Erode District, Tamilnadu. 
+                    The noble Trust has taken the institute to greater heights since its inception in 1983 and has established the college as a forum for imparting value based education for men and women.
+                  </p>
                 </div>
                 
-                <div className="space-y-2">
-                  <Link to="/events">
-                    <div className="w-12 h-12 button-gradient rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-200">
-                      <Calendar className="w-6 h-6 text-white" />
-                    </div>
-                  </Link>
-                  <h3 className="text-xl font-semibold text-foreground">5+ Events</h3>
-                  <p className="text-muted-foreground">Workshops and Guest lectures</p>
+                <div className="space-y-4 animate-slide-up delay-200">
+                  <h2 className="text-4xl md:text-5xl font-bold text-black drop-shadow-lg">
+                    About Our
+                    <span className="text-primary"> Club</span>
+                  </h2>
+                  <p className="text-lg text-black leading-relaxed drop-shadow">
+                    The Gender Equality Club at Kongu Engineering College works to promote equal opportunities, respect, and inclusiveness among all students on campus. The club creates awareness about the importance of gender balance in education, workplace, and society.
+                    <br />
+                    Through workshops, seminars, discussions, and cultural events, the club encourages students to break stereotypes, respect diversity, and build confidence. It also works hand-in-hand with the Women Development Cell to provide a safe and supportive environment, while motivating both male and female students to contribute positively to society. 
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                  <div className="space-y-2">
+                    <Link to="/office-bearers">
+                      <div className="w-12 h-12 button-gradient rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-200">
+                        <Users className="w-6 h-6 text-white" />
+                      </div>
+                    </Link>
+                    <h3 className="text-xl font-semibold text-foreground">50+ Members</h3>
+                    <p className="text-muted-foreground">Active student community</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Link to="/events">
+                      <div className="w-12 h-12 button-gradient rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-200">
+                        <Calendar className="w-6 h-6 text-white" />
+                      </div>
+                    </Link>
+                    <h3 className="text-xl font-semibold text-foreground">5+ Events</h3>
+                    <p className="text-muted-foreground">Workshops and Guest lectures</p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -163,16 +163,7 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">
-                Office Hours
-              </h3>
-              <div className="space-y-3 text-muted-foreground">
-                <p><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM</p>
-                <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
-                <p><strong>Sunday:</strong> Closed</p>
-              </div>
-            </div>
+            
 
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">
@@ -187,10 +178,7 @@ const ContactForm = () => {
                   <CheckCircle className="w-4 h-4 mr-2" />
                   Professional support team
                 </Badge>
-                <Badge variant="secondary" className="bg-purple-100 text-purple-800">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Confidentiality assured
-                </Badge>
+                
               </div>
             </div>
           </div>
