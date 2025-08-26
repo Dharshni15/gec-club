@@ -73,13 +73,7 @@ const Home = () => {
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 leading-relaxed drop-shadow" data-aos="fade-up" data-aos-delay="250">
               A gender-equal society would be one where the word 'gender' does not exist: where everyone can be themselves.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
-              <Link to="/events">
-                <Button size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-primary hover-lift text-lg px-8 py-4">
-                  View Events
-                </Button>
-              </Link>
-            </div>
+            
           </div>
         </div>
         
@@ -90,19 +84,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Example: Add Register button below the hero section */}
-      <div className="flex justify-center mt-8">
-        <Link to="/register">
-          <Button
-            size="lg"
-            variant="default"
-            className="bg-primary text-white font-bold hover:bg-white hover:text-primary hover-lift text-lg px-8 py-4 border-2 border-primary shadow-lg"
-          >
-            Register
-          </Button>
-        </Link>
-      </div>
-
+  
+      
       {/* About Us Section */}
       <section className="py-20 bg-background">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
