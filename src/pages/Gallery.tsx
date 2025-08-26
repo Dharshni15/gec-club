@@ -229,8 +229,15 @@ const Gallery = () => {
     }
   ];
 
-  // Extract unique years from gallery items
-  const years = ["All", ...new Set(galleryItems.map(item => item.year))];
+  // Extract unique years from gallery items and sort them in the order: 2023, 2024, 2025
+  const uniqueYears = Array.from(new Set(galleryItems.map(item => item.year)));
+  const sortedYears = uniqueYears.sort((a, b) => {
+    // Custom sorting to get 2023, 2024, 2025 order
+    const order = { '2023': 1, '2024': 2, '2025': 3 };
+    return order[a] - order[b];
+  });
+  
+  const years = ["All", ...sortedYears];
   const [selectedYear, setSelectedYear] = useState("All");
 
   const filteredItems = selectedYear === "All" 
