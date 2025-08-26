@@ -21,9 +21,9 @@ import Ahish from '@/assets/AHISH.jpg';
 import Praneesh from '@/assets/PRANEESH.jpg';
 import Vidulasri from '@/assets/VIDULASRI.jpg';
 import Dhanushya from '@/assets/DHANUSHYA V.jpeg';
-import Harish from '@/assets/HARISH.jpg';
+import Harish from '@/assets/HARISH.png';
 import AadhiPranesh from '@/assets/AADHI.jpg';  
-import Abhinav2 from '@/assets/ABHIINAV.jpg';
+import Abhinav2 from '@/assets/ABHINAV.jpg';
 import Sujhay from '@/assets/SUJHAY.jpg';
 import Monisha from '@/assets/MONISHA.jpg';
 import Bhavani from '@/assets/BHAVANI.jpg';
@@ -31,10 +31,10 @@ import Dharshini from '@/assets/DHARSHINI.jpg';
 import Kishore from '@/assets/KISHORE.jpg';
 import Aswaythi from '@/assets/ASWAYTHI.jpg';
 import Gobika from '@/assets/GOBIKA.jpg';
-import Yohith from '@/assets/6_20250812_150851_0005.png';
+import Yohith from '@/assets/24CHR052 YOHITH N M.jpg';
 import Sanjay from '@/assets/SANJAY.jpg';
 import Prajit from '@/assets/PRAJIT.jpg';
-import Kavin from '@/assets/KAVIN.png';
+import Kavin from '@/assets/KAVIN.jpg';
 import Sahana from '@/assets/SAHANA.jpg';
 import Vedha from '@/assets/VEDHA.jpg';
 import Nanthitha from '@/assets/NANTHITHA.jpg';
@@ -252,7 +252,7 @@ const OfficeBearers = () => {
     },
 
       {
-      name: "Ms. E. Sujhay Prajin",
+      name: "Mr. E. Sujhay Prajin",
       department: "Artificial Intelligence And Data Science",
       year: "Second Year",
       image: Sujhay,
