@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const quickLinks = [
@@ -29,15 +29,11 @@ const Footer = () => {
               Building a more equitable future through education, awareness, and action.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:scale-110 hover:bg-white/30 transition-all duration-300">
-                <Facebook className="w-4 h-4" />
-              </a>
+              
               <a href="https://www.instagram.com/genderequalityclub_kec?igsh=emo3bHVxdnhiYmMx" className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:scale-110 hover:bg-white/30 transition-all duration-300">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:scale-110 hover:bg-white/30 transition-all duration-300">
-                <Twitter className="w-4 h-4" />
-              </a>
+              
             </div>
           </div>
 
@@ -72,18 +68,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-white/80" />
-                <span className="text-white/90">dinesh.nova@gmail.com</span>
+                <span className="text-white/90">gec@kongu.edu</span>
                 
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-white/80" />
-                <span className="text-white/90">mohanasaranya.cse@kongu.edu</span>
               
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-white/80" />
-                <span className="text-white/90">+91 99448 46480</span>
-              </div>
+              
             </div>
           </div>
         </div>
