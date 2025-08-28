@@ -358,7 +358,7 @@ const OfficeBearers = () => {
     {
       name: "Ms. S. Mohana Saranya",
       position: "Faculty Coordinators",
-      department: "Associate Professor, Computer Science",
+      department: "Assistant Professor, Computer Science",
       email: "mohanasaranya.cse@kongu.edu",
       phone: "04294-226588",
       image: Mohana}
