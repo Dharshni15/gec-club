@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useTheme } from 'next-themes';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const { theme, setTheme } = useTheme();
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -69,38 +67,10 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full rounded-full"></span>
               </Link>
             ))}
-
-            {/* Theme Toggle */}
-            <Button
-              variant="ghost"
-              size="lg"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="w-12 h-12 p-0 rounded-full hover:bg-gray-800 transition-colors text-white"
-            >
-              {theme === 'dark' ? (
-                <Sun className="h-6 w-6 text-yellow-300" />
-              ) : (
-                <Moon className="h-6 w-6 text-blue-300" />
-              )}
-            </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-3">
-            {/* Theme Toggle for Mobile */}
-            <Button
-              variant="ghost"
-              size="lg"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="w-12 h-12 p-0 rounded-full hover:bg-gray-800 transition-colors text-white"
-            >
-              {theme === 'dark' ? (
-                <Sun className="h-6 w-6 text-yellow-300" />
-              ) : (
-                <Moon className="h-6 w-6 text-blue-300" />
-              )}
-            </Button>
-            
+          <div className="md:hidden flex items-center">
             <Button
               variant="ghost"
               size="lg"

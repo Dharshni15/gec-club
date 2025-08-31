@@ -398,13 +398,15 @@ const OfficeBearers = () => {
               <Card key={index} className={`hover-lift border-0 card-gradient ${index % 2 === 0 ? 'slide-up' : 'scale-in'}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
-                    <div className="relative">
-                      <img 
-                        src={advisor.image}
-                        alt={advisor.name}
-                        className="w-24 h-24 rounded-full object-cover ring-4 ring-primary/20"
-                      />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+                    <div className="relative w-32 h-32 flex-shrink-0">
+                      <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                        <img 
+                          src={advisor.image}
+                          alt={advisor.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20"></div>
                     </div>
                     
                     <div className="flex-1 text-center sm:text-left">
@@ -446,21 +448,19 @@ const OfficeBearers = () => {
                 <CardContent className="p-6">
                   <div className="text-center">
                     <div className="relative mb-4 mx-auto w-32 h-32">
-                      <img 
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
-                      />
-                      
+                      <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                        <img 
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     
                     <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
                     <p className="text-primary font-semibold mb-1">{member.position}</p>
                     <p className="text-muted-foreground text-sm mb-1">{member.department}</p>
                     <p className="text-muted-foreground text-sm mb-3">{member.year}</p>
-                    
-                    
-                    
                   </div>
                 </CardContent>
               </Card>
@@ -468,7 +468,8 @@ const OfficeBearers = () => {
           </div>
         </div>
       </section>
- {/* Treasurer */}
+      
+      {/* Treasurer */}
       <section className="py-16 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 mb-12 fade-in">
@@ -482,21 +483,19 @@ const OfficeBearers = () => {
                 <CardContent className="p-6">
                   <div className="text-center">
                     <div className="relative mb-4 mx-auto w-32 h-32">
-                      <img 
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
-                      />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+                      <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                        <img 
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     
                     <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
                     <p className="text-primary font-semibold mb-1">{member.position}</p>
                     <p className="text-muted-foreground text-sm mb-1">{member.department}</p>
                     <p className="text-muted-foreground text-sm mb-3">{member.year}</p>
-                    
-                    
-                    
                   </div>
                 </CardContent>
               </Card>
@@ -504,7 +503,8 @@ const OfficeBearers = () => {
           </div>
         </div>
       </section>
-       {/* Joint Secretary */}
+      
+      {/* Joint Secretary */}
       <section className="py-16 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 mb-12 fade-in">
@@ -518,21 +518,19 @@ const OfficeBearers = () => {
                 <CardContent className="p-6">
                   <div className="text-center">
                     <div className="relative mb-4 mx-auto w-32 h-32">
-                      <img 
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
-                      />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+                      <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                        <img 
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     
                     <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
                     <p className="text-primary font-semibold mb-1">{member.position}</p>
                     <p className="text-muted-foreground text-sm mb-1">{member.department}</p>
                     <p className="text-muted-foreground text-sm mb-3">{member.year}</p>
-                    
-                    
-                    
                   </div>
                 </CardContent>
               </Card>
@@ -540,7 +538,8 @@ const OfficeBearers = () => {
           </div>
         </div>
       </section>
-       {/* Joint Treasurer */}
+      
+      {/* Joint Treasurer */}
       <section className="py-16 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 mb-12 fade-in">
@@ -554,21 +553,19 @@ const OfficeBearers = () => {
                 <CardContent className="p-6">
                   <div className="text-center">
                     <div className="relative mb-4 mx-auto w-32 h-32">
-                      <img 
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
-                      />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+                      <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                        <img 
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     
                     <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
                     <p className="text-primary font-semibold mb-1">{member.position}</p>
                     <p className="text-muted-foreground text-sm mb-1">{member.department}</p>
                     <p className="text-muted-foreground text-sm mb-3">{member.year}</p>
-                    
-                    
-                    
                   </div>
                 </CardContent>
               </Card>
@@ -576,6 +573,7 @@ const OfficeBearers = () => {
           </div>
         </div>
       </section>
+      
       {/* Event Organizing Team */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -583,16 +581,18 @@ const OfficeBearers = () => {
             <h2 className="text-4xl font-bold text-foreground">Event Organizing Team</h2>
             
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {EventOrganizing.map((coordinator, index) => (
               <Card key={index} className={`hover-lift border-0 card-gradient ${index % 2 === 0 ? 'scale-in' : 'slide-up'}`}>
                 <CardContent className="p-6 text-center">
-                  <div className="relative mb-4 mx-auto w-20 h-20">
-                    <img 
-                      src={coordinator.image}
-                      alt={coordinator.name}
-                      className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
-                    />
+                  <div className="relative mb-4 mx-auto w-24 h-24">
+                    <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                      <img 
+                        src={coordinator.image}
+                        alt={coordinator.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-1">{coordinator.name}</h3>
                   <p className="text-muted-foreground text-xs mb-1">{coordinator.department}</p>
@@ -603,23 +603,26 @@ const OfficeBearers = () => {
           </div>
         </div>
       </section>
- {/* Documentation Team */}
+      
+      {/* Documentation Team */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 mb-12 slide-up">
             <h2 className="text-4xl font-bold text-foreground">Documentation Team</h2>
             
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {Documentation.map((coordinator, index) => (
               <Card key={index} className={`hover-lift border-0 card-gradient ${index % 2 === 0 ? 'scale-in' : 'slide-up'}`}>
                 <CardContent className="p-6 text-center">
-                  <div className="relative mb-4 mx-auto w-20 h-20">
-                    <img 
-                      src={coordinator.image}
-                      alt={coordinator.name}
-                      className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
-                    />
+                  <div className="relative mb-4 mx-auto w-24 h-24">
+                    <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                      <img 
+                        src={coordinator.image}
+                        alt={coordinator.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-1">{coordinator.name}</h3>
                   <p className="text-muted-foreground text-xs mb-1">{coordinator.department}</p>
@@ -630,23 +633,26 @@ const OfficeBearers = () => {
           </div>
         </div>
       </section>
-       {/* Multimedia Team */}
+      
+      {/* Multimedia Team */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 mb-12 slide-up">
             <h2 className="text-4xl font-bold text-foreground">Multimedia Team</h2>
             
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {multimedia.map((coordinator, index) => (
               <Card key={index} className={`hover-lift border-0 card-gradient ${index % 2 === 0 ? 'scale-in' : 'slide-up'}`}>
                 <CardContent className="p-6 text-center">
-                  <div className="relative mb-4 mx-auto w-20 h-20">
-                    <img 
-                      src={coordinator.image}
-                      alt={coordinator.name}
-                      className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
-                    />
+                  <div className="relative mb-4 mx-auto w-24 h-24">
+                    <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                      <img 
+                        src={coordinator.image}
+                        alt={coordinator.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-1">{coordinator.name}</h3>
                   <p className="text-muted-foreground text-xs mb-1">{coordinator.department}</p>
@@ -657,23 +663,26 @@ const OfficeBearers = () => {
           </div>
         </div>
       </section>
- {/* Event Organizing Team */}
+      
+      {/* Executive Members */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 mb-12 slide-up">
-            <h2 className="text-4xl font-bold text-foreground">Executive Member</h2>
+            <h2 className="text-4xl font-bold text-foreground">Executive Members</h2>
             
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {executive.map((coordinator, index) => (
               <Card key={index} className={`hover-lift border-0 card-gradient ${index % 2 === 0 ? 'scale-in' : 'slide-up'}`}>
                 <CardContent className="p-6 text-center">
-                  <div className="relative mb-4 mx-auto w-20 h-20">
-                    <img 
-                      src={coordinator.image}
-                      alt={coordinator.name}
-                      className="w-full h-full rounded-full object-cover ring-4 ring-primary/20"
-                    />
+                  <div className="relative mb-4 mx-auto w-24 h-24">
+                    <div className="w-full h-full rounded-lg overflow-hidden bg-gray-200">
+                      <img 
+                        src={coordinator.image}
+                        alt={coordinator.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-1">{coordinator.name}</h3>
                   <p className="text-muted-foreground text-xs mb-1">{coordinator.department}</p>
@@ -684,6 +693,7 @@ const OfficeBearers = () => {
           </div>
         </div>
       </section>
+      
       <Footer />
       <ScrollToTop />
     </div>

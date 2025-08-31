@@ -215,7 +215,7 @@ const Events = () => {
                     <p className="text-gray-600 mt-2">{ongoingEvents[0].description}</p>
                   </div>
                   <button
-                    className="mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-white py-2 px-6 rounded-md transition-colors"
+                   className="mt-4 md:mt-0 bg-blue-900 hover:bg-blue-800 text-white py-2 px-6 rounded-md transition-colors"
                     onClick={() => navigate('/RegistrationForm')}
                   >
                     Register Now
