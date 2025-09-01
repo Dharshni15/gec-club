@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import event from '@/assets/Event 2/Copy of gec2.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -18,7 +19,7 @@ const Gallery = () => {
       year: "2024",
       date: "March 8, 2024",
       description: "Students celebrating with cultural performances and inspiring speeches",
-      image: "src/assets/Event 2/Copy of gec2.jpg"
+      image: event
     },
     {
       id: 2,
