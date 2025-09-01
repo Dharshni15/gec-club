@@ -5,7 +5,31 @@ import { Badge } from '@/components/ui/badge';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import event from '@/assets/Event 2/Copy of gec2.jpg';
+import event1 from '@/assets/Event 2/Copy of gec2.jpg';
+import event2 from '@/assets/Event 2/Copy of gec4.jpg';
+import event3 from '@/assets/Event 2/Copy of gec5.jpg';
+import event4 from '@/assets/Event 2/Copy of gec6.jpg';
+import event7 from '@/assets/Event 2/Copy of gec7.jpg';
+import event8 from '@/assets/Event 2/Copy of gec8.jpg';
+import event9 from '@/assets/Event 2/Copy of Office barrier.jpg';
+import event10 from '@/assets/Event 2/Copy of pray.jpg';
+import event11 from '@/assets/Event 3/2.jpg';
+import event12 from '@/assets/Event 3/3.jpg';
+import event13 from '@/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.39_4239702e.jpg';
+import event14 from '@/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.39_baca41a6.jpg';
+import event15 from '@/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.39_d6f51afd.jpg';
+import event16 from '@/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.40_34da6e1e.jpg';
+import event17 from '@/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.40_93ec50f5.jpg';
+import event18 from '@/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.40_97525012.jpg';
+import event19 from '@/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.42_16736e39.jpg';
+import event20 from '@/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.42_d9613d37.jpg';
+import event21 from '@/assets/Event 5/Copy of Event photo .png';
+import event22 from '@/assets/Event 5/Copy of Event photo 2 .png';
+import event23 from '@/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_26c8a95b.jpg';
+import event24 from '@/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_3627ede9.jpg';
+import event25 from '@/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_cd91be45.jpg';
+import event26 from '@/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.46_fc8e8dea.jpg';
+
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -19,7 +43,7 @@ const Gallery = () => {
       year: "2024",
       date: "March 8, 2024",
       description: "Students celebrating with cultural performances and inspiring speeches",
-      image: event
+      image: event1
     },
     {
       id: 2,
@@ -28,7 +52,7 @@ const Gallery = () => {
       year: "2024",
       date: "February 15, 2024",
       description: "Interactive session on women leadership in technology",
-      image: "src/assets/Event 2/Copy of gec4.jpg"
+      image: event2
     },
     {
       id: 3,
@@ -37,7 +61,7 @@ const Gallery = () => {
       year: "2024",
       date: "January 20, 2024",
       description: "Industry experts sharing insights on gender equality",
-      image: "src/assets/Event 2/Copy of gec5.jpg"
+      image: event3
     },
     {
       id: 4,
@@ -46,7 +70,7 @@ const Gallery = () => {
       year: "2023",
       date: "December 10, 2023",
       description: "Campus-wide awareness activities and exhibitions",
-      image: "src/assets/Event 2/Copy of gec6.jpg"
+      image: event4
     },
     {
       id: 5,
@@ -55,7 +79,7 @@ const Gallery = () => {
       year: "2023",
       date: "November 25, 2023",
       description: "Active student engagement in equality discussions",
-      image: "src/assets/Event 2/Copy of gec8.jpg"
+      image: event7
     },
     {
       id: 6,
@@ -64,7 +88,7 @@ const Gallery = () => {
       year: "2023",
       date: "October 15, 2023",
       description: "Group activities promoting inclusive thinking",
-      image: "src/assets/Event 2/Copy of Office barrier.jpg"
+      image: event8
     },
     {
       id: 7,
@@ -73,7 +97,7 @@ const Gallery = () => {
       year: "2024",
       date: "September 30, 2024",
       description: "Renowned speaker addressing gender equality in workplace",
-      image: "src/assets/Event 2/Copy of pray.jpg"
+      image: event9
     },
     {
       id: 8,
@@ -82,7 +106,7 @@ const Gallery = () => {
       year: "2024",
       date: "August 20, 2024",
       description: "Fun activities promoting unity and understanding",
-      image: "src/assets/Event 3/1.JPG"
+      image: event10
     },
     {
       id: 9,
@@ -91,7 +115,7 @@ const Gallery = () => {
       year: "2024",
       date: "July 12, 2024",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 3/2.jpg"
+      image: event11
     },
     {
       id: 10,
@@ -100,7 +124,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.39_4239702e.jpg"
+      image: event12
     },
     {
       id: 11,
@@ -109,7 +133,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.39_baca41a6.jpg"
+      image: event13
     },
     {
       id: 12,
@@ -118,7 +142,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.39_d6f51afd.jpg"
+      image: event14
     },
     {
       id: 13,
@@ -127,7 +151,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.40_34da6e1e.jpg"
+      image: event15
     },
     {
       id: 14,
@@ -136,7 +160,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.40_93ec50f5.jpg"
+      image: event16
     },
     {
       id: 15,
@@ -145,7 +169,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.40_97525012.jpg"
+      image: event17
     },
     {
       id: 16,
@@ -154,7 +178,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.42_16736e39.jpg"
+      image: event18
     },
     {
       id: 17,
@@ -163,7 +187,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 4/WhatsApp Image 2025-08-15 at 22.19.42_d9613d37.jpg"
+      image: event19
     },
     {
       id: 18,
@@ -172,7 +196,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 5/Copy of Event photo .png"
+      image: event20
     },
     {
       id: 19,
@@ -181,7 +205,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 5/Copy of Event photo 2 .png"
+      image: event21
     },
     {
       id: 20,
@@ -190,7 +214,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_26c8a95b.jpg"
+      image: event22
     },
     {
       id: 21,
@@ -199,7 +223,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_26c8a95b.jpg"
+      image: event23
     },
     {
       id: 22,
@@ -208,7 +232,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_3627ede9.jpg"
+      image: event24
     },
     {
       id: 23,
@@ -217,7 +241,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_cd91be45.jpg"
+      image: event25
     },
     {
       id: 24,
@@ -226,7 +250,7 @@ const Gallery = () => {
       year: "2025",
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
-      image: "src/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.46_fc8e8dea.jpg"
+      image: event26
     }
   ];
 
