@@ -76,7 +76,7 @@ const OfficeBearers = () => {
       image: Avaneesh,
     },
     {
-      name: "Ms. J. Dharshini",
+      name: "Ms. J. Dharshni",
       position: "Treasurer",
       department: "Information Technology",
       year: "Third Year",
