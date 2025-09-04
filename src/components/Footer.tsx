@@ -79,7 +79,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-white/80">
-            © 2024 Gender Equality Club, Kongu Engineering College. All rights reserved.
+            © 2025 Gender Equality Club. All rights reserved.
           </p>
         </div>
       </div>
