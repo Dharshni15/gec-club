@@ -8,7 +8,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import EventCountdown from '@/components/EventCountdown';
 import QuoteOfTheDay from '@/components/QuoteOfTheDay';
 
-import video from '@/assets/WhatsApp Video 2025-08-16 at 22.22.40_7324f47d.mp4';
+import heroImage from '@/assets/image copy.png'; // Changed from video import to image import
 import eventsImage from '@/assets/Event 2/Copy of gec2.jpg';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
@@ -49,26 +49,27 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          {/* Background Video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
+          {/* Background Image (replaced video) */}
+          <img
+            src={heroImage}
+            alt="Hero background"
             className="absolute inset-0 w-full h-full object-cover z-0"
-          >
-            <source src={video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          />
+          {/* Optional: Add an overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/30 z-0"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="space-y-8 fade-in">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg" data-aos="fade-up">
               Building an
-              <span className="block accent-gradient bg-clip-text text-transparent drop-shadow-lg" data-aos="zoom-in" data-aos-delay="150">
-                Equal Future
-              </span>
+             <span 
+  className="block text-blue-800 dark:text-blue-600 drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)] [text-stroke:1.5px_black] [-webkit-text-stroke:1.5px_black]" 
+  data-aos="zoom-in" 
+  data-aos-delay="150"
+>
+  Equal Future
+</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 leading-relaxed drop-shadow" data-aos="fade-up" data-aos-delay="250">
               A gender-equal society would be one where the word 'gender' does not exist: where everyone can be themselves.
