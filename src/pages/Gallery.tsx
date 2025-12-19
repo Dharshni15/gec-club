@@ -29,7 +29,15 @@ import event23 from '@/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58
 import event24 from '@/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_3627ede9.jpg';
 import event25 from '@/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.45_cd91be45.jpg';
 import event26 from '@/assets/Event 6/Copy of WhatsApp Image 2025-05-18 at 15.58.46_fc8e8dea.jpg';
-
+import event27 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (1).jpeg';
+import event28 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (2).jpeg';
+import event29 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (3).jpeg';
+import event30 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (4).jpeg';
+import event31 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (5).jpeg';
+import event32 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (6).jpeg';
+import event33 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (7).jpeg';
+import event34 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (8).jpeg';
+import event35 from '@/assets/Event 7/WhatsApp Image 2025-11-23 at 22.06.46 (9).jpeg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -251,6 +259,86 @@ const Gallery = () => {
       date: "July 12, 2025",
       description: "Students actively participating in skill-building sessions",
       image: event26
+    }
+    ,
+    {
+      id: 25,
+      title: "Workshop Participation",
+      category: "Workshop",
+      year: "2025",
+      date: "July 12, 2025",
+      description: "Students actively participating in skill-building sessions",
+      image: event26
+    }
+    ,
+    {
+      id: 26,
+      title: "Workshop Participation",
+      category: "Workshop",
+      year: "2025",
+      date: "July 12, 2025",
+      description: "Students actively participating in skill-building sessions",
+      image: event27
+    }
+    ,
+    {
+      id: 27,
+      title: "Workshop Participation",
+      category: "Workshop",
+      year: "2025",
+      date: "July 12, 2025",
+      description: "Students actively participating in skill-building sessions",
+      image: event28
+    }
+    ,
+    {
+      id: 28,
+      title: "Workshop Participation",
+      category: "Workshop",
+      year: "2025",
+      date: "July 12, 2025",
+      description: "Students actively participating in skill-building sessions",
+      image: event29
+    }
+    ,
+    {
+      id: 29,
+      title: "Workshop Participation",
+      category: "Workshop",
+      year: "2025",
+      date: "July 12, 2025",
+      description: "Students actively participating in skill-building sessions",
+      image: event30
+    }
+    ,
+    {
+      id: 30,
+      title: "Workshop Participation",
+      category: "Workshop",
+      year: "2025",
+      date: "July 12, 2025",
+      description: "Students actively participating in skill-building sessions",
+      image: event31
+    }
+    ,
+    {
+      id: 31,
+      title: "Workshop Participation",
+      category: "Workshop",
+      year: "2025",
+      date: "July 12, 2025",
+      description: "Students actively participating in skill-building sessions",
+      image: event32
+    }
+    ,
+    {
+      id: 32,
+      title: "Workshop Participation",
+      category: "Workshop",
+      year: "2025",
+      date: "July 12, 2025",
+      description: "Students actively participating in skill-building sessions",
+      image: event33
     }
   ];
 
