@@ -75,7 +75,7 @@ const Events = () => {
     {
       id: 9,
       title: "Awareness Program",
-      date: "1st week of April, 2026",
+      date: "will be announced later",
       time: "2:00 PM - 4:00 PM",
       location: "Seminar Hall",
       description: "Program to raise awareness on sustainability topics.",
@@ -87,7 +87,7 @@ const Events = () => {
     {
       id: 10,
       title: "Valedictory Function",
-      date: "3rd week of April, 2026",
+      date: "will be announced later",
       time: "10:00 AM - 12:00 PM",
       location: "Main Auditorium",
       description: "Closing ceremony for the academic year's events.",
