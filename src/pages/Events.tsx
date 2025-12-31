@@ -41,7 +41,7 @@ const Events = () => {
       time: "9:00 AM - 5:00 PM",
       location: "Conference Hall",
       description: "Technical symposium with presentations and competitions.",
-      status: "ongoing",
+      status: "upcoming",
       category: "Symposium",
       image: "/api/placeholder/400/200?text=Prometheus+25",
       highlights: ["Technical Presentations", "Competitions", "Prizes"]
@@ -58,66 +58,20 @@ const Events = () => {
       image: "/api/placeholder/400/200?text=Guest+Lecture",
       highlights: ["Industry Expert", "Q&A Session", "Certificate"]
     },
-    {
-      id: 4,
-      title: "Rudra' 25 - International Men's Day",
-      date: "4th week of November, 2025",
-      time: "10:00 AM - 1:00 PM",
-      location: "Main Hall",
-      description: "Celebration and awareness program for International Men's Day.",
-      status: "upcoming",
-      category: "Awareness",
-      image: "/api/placeholder/400/200?text=Rudra+25",
-      highlights: ["Awareness Program", "Cultural Activities", "Discussion"]
-    },
-    {
-      id: 5,
-      title: "Equality Through Art",
-      date: "4th week of December, 2025",
-      time: "2:00 PM - 5:00 PM",
-      location: "Art Gallery",
-      description: "Art event promoting equality and inclusion.",
-      status: "upcoming",
-      category: "Art",
-      image: "/api/placeholder/400/200?text=Equality+Art",
-      highlights: ["Art Exhibition", "Workshops", "Live Performances"]
-    },
-    {
-      id: 6,
-      title: "Workshop on AI",
-      date: "3rd week of January, 2026",
-      time: "10:00 AM - 4:00 PM",
-      location: "Innovation Center",
-      description: "Hands-on workshop on Artificial Intelligence.",
-      status: "upcoming",
-      category: "Workshop",
-      image: "/api/placeholder/400/200?text=AI+Workshop",
-      highlights: ["Hands-on Training", "AI Tools", "Project Work"]
-    },
+  
     {
       id: 7,
-      title: "Hackathon (Both hardware and software)",
-      date: "2nd week of February, 2026",
-      time: "9:00 AM - Next Day 9:00 AM",
-      location: "Innovation Center",
-      description: "24-hour hackathon for hardware and software solutions.",
-      status: "upcoming",
+      title: "BALANCE-BYTES(Hackathon)",
+      date: "3rd Jan 2026",
+      time: "9:00 AM to 4:00 PM",
+      location: "cc12 Admin Block",
+      description: "7-hour hackathon for hardware and software solutions.",
+      status: "ongoing",
       category: "Hackathon",
       image: "/api/placeholder/400/200?text=Hackathon",
-      highlights: ["24-hour Challenge", "Mentorship", "Prizes"]
+      highlights: ["7-hour Challenge", "Mentorship", "Prizes"]
     },
-    {
-      id: 8,
-      title: "Aurora '25 – International Women's Day",
-      date: "1st week of March, 2026",
-      time: "10:00 AM - 1:00 PM",
-      location: "Main Hall",
-      description: "Celebration and awareness program for International Women's Day.",
-      status: "upcoming",
-      category: "Awareness",
-      image: "/api/placeholder/400/200?text=Aurora+25",
-      highlights: ["Celebration", "Awareness", "Cultural Program"]
-    },
+    
     {
       id: 9,
       title: "Awareness Program",
@@ -216,9 +170,9 @@ const Events = () => {
                   </div>
                   <button
                    className="mt-4 md:mt-0 bg-blue-900 hover:bg-blue-800 text-white py-2 px-6 rounded-md transition-colors"
-                    onClick={() => navigate('/RegistrationForm')}
+                   onClick={() => window.open('https://forms.gle/SjaEh5GNJdVQ4tXs7', '_blank')}
                   >
-                    Register Now
+                    Register Now 
                   </button>
                 </div>
                 
@@ -408,12 +362,12 @@ const Events = () => {
                       </button>
                     )}
                     {event.status === 'ongoing' && (
-                      <button
-                        className="w-full bg-accent hover:bg-accent/90 text-white py-2 px-4 rounded-md transition-colors"
-                        onClick={() => navigate('/RegistrationForm')}
-                      >
-                        Register Now
-                      </button>
+                        <button
+                          className="w-full bg-accent hover:bg-accent/90 text-white py-2 px-4 rounded-md transition-colors font-semibold"
+                          onClick={() => window.open('https://forms.gle/SjaEh5GNJdVQ4tXs7', '_blank')}
+                        >
+                          Register Now
+                        </button>
                     )}
                     {event.status === 'completed' && (
                       <button 
