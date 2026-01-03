@@ -11,6 +11,8 @@ import OfficeBearers from "./pages/OfficeBearers";
 import NotFound from "./pages/NotFound";
 import RegistrationForm from "./pages/Register";
 
+import Odlist from "./pages/odlist";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,6 +28,7 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/office-bearers" element={<OfficeBearers />} />
             <Route path="/RegistrationForm" element={<RegistrationForm />} />
+            <Route path="/odlist" element={<Odlist />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
