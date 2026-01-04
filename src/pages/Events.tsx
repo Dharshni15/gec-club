@@ -66,7 +66,7 @@ const Events = () => {
       time: "9:00 AM to 4:00 PM",
       location: "cc12 Admin Block",
       description: "7-hour hackathon for hardware and software solutions.",
-      status: "ongoing",
+      status: "completed",
       category: "Hackathon",
       image: "/api/placeholder/400/200?text=Hackathon",
       highlights: ["7-hour Challenge", "Mentorship", "Prizes"]
