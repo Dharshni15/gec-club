@@ -6,16 +6,16 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 // Dynamic image groups for new gallery sections
 const oldImages = Object.values(
-  import.meta.glob('@/assets/old/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, as: 'url' })
+  import.meta.glob('@/assets/old/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, query: '?url', import: 'default' })
 ) as string[];
 const inaugImages = Object.values(
-  import.meta.glob('@/assets/inaug 2025-2026/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, as: 'url' })
+  import.meta.glob('@/assets/inaug 2025-2026/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, query: '?url', import: 'default' })
 ) as string[];
 const guestImages = Object.values(
-  import.meta.glob('@/assets/geust 2025-2026/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, as: 'url' })
+  import.meta.glob('@/assets/geust 2025-2026/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, query: '?url', import: 'default' })
 ) as string[];
 const technoImages = Object.values(
-  import.meta.glob('@/assets/techno 2025-2026/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, as: 'url' })
+  import.meta.glob('@/assets/techno 2025-2026/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, query: '?url', import: 'default' })
 ) as string[];
 // removed legacy static image imports to use folder-based grouping
 
