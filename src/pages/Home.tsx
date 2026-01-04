@@ -9,7 +9,7 @@ import EventCountdown from '@/components/EventCountdown';
 import QuoteOfTheDay from '@/components/QuoteOfTheDay';
 
 import heroImage from '@/assets/image copy.png'; // Changed from video import to image import
-import eventsImage from '@/assets/Event 2/Copy of gec2.jpg';
+import eventsImage from '@/assets/old/old 10.jpg';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

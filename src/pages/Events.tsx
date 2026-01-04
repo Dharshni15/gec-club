@@ -354,6 +354,9 @@ const Events = () => {
                   
                   <div className="mt-6">
                     {event.status === 'upcoming' && (
+                      <></>
+                    )}
+                    {event.status === 'ongoing' && (
                       <button
                         className="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md transition-colors font-semibold"
                         onClick={() => navigate('/gallery')}
@@ -361,21 +364,12 @@ const Events = () => {
                         View Details
                       </button>
                     )}
-                    {event.status === 'ongoing' && (
-                        <button
-                          className="w-full bg-accent hover:bg-accent/90 text-white py-2 px-4 rounded-md transition-colors font-semibold"
-                          onClick={() => window.open('https://forms.gle/SjaEh5GNJdVQ4tXs7', '_blank')}
-                        >
-                          Register Now
-                        </button>
-                    )}
                     {event.status === 'completed' && (
-                      <button 
-                        className="w-full bg-muted-foreground hover:bg-muted-foreground/80 text-white py-2 px-4 rounded-md transition-colors"
-                        onClick={() => navigate('/gallery')}
+                      <span 
+                        className="inline-block w-full text-center px-4 py-2 bg-muted-foreground/20 text-muted-foreground rounded-md font-semibold"
                       >
-                        View Recap
-                      </button>
+                        Completed
+                      </span>
                     )}
                   </div>
                 </div>
