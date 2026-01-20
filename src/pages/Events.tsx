@@ -41,7 +41,7 @@ const Events = () => {
       time: "9:00 AM - 5:00 PM",
       location: "Conference Hall",
       description: "Technical symposium with presentations and competitions.",
-      status: "upcoming",
+      status: "ongoing",
       category: "Symposium",
       image: "/api/placeholder/400/200?text=Prometheus+25",
       highlights: ["Technical Presentations", "Competitions", "Prizes"]
@@ -168,10 +168,10 @@ const Events = () => {
                     </h2>
                     <p className="text-gray-600 mt-2">{ongoingEvents[0].description}</p>
                   </div>
-                  <button
-                   className="mt-4 md:mt-0 bg-blue-900 hover:bg-blue-800 text-white py-2 px-6 rounded-md transition-colors"
-                   onClick={() => window.open('https://forms.gle/SjaEh5GNJdVQ4tXs7', '_blank')}
-                  >
+                    <button
+                    className="mt-4 md:mt-0 bg-blue-900 hover:bg-blue-800 text-white py-2 px-6 rounded-md transition-colors"
+                    onClick={() => navigate('/RegistrationForm')}
+                    >
                     Register Now 
                   </button>
                 </div>
