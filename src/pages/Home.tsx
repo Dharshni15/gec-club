@@ -8,7 +8,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import EventCountdown from '@/components/EventCountdown';
 import QuoteOfTheDay from '@/components/QuoteOfTheDay';
 
-import heroImage from '@/assets/image copy.png'; // Changed from video import to image import
+import heroImage from '@/assets/image copy 7.png'; // Changed from video import to image import
 import eventsImage from '@/assets/old/old 10.jpg';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
@@ -64,7 +64,7 @@ const Home = () => {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg" data-aos="fade-up">
               Building an
              <span 
-  className="block text-blue-800 dark:text-blue-600 drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)] [text-stroke:1.5px_black] [-webkit-text-stroke:1.5px_black]" 
+  className="block text-white-800 dark:text-blue-600 drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)] [text-stroke:1.5px_black] [-webkit-text-stroke:1.5px_black]" 
   data-aos="zoom-in" 
   data-aos-delay="150"
 >

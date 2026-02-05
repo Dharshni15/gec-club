@@ -94,7 +94,7 @@ const EventRegistration: React.FC = () => {
     {
       id: 'cluster2',
       title: 'Late Morning Events',
-      time: '11:00 AM - 12:30 PM',
+      time: '11:00 AM - 12:25 PM',
       color: '#1c33ccff',
       formUrl: 'https://forms.gle/pm8Mak7Sc52tEL4Y8',
       maxEvents: 1,
@@ -102,34 +102,34 @@ const EventRegistration: React.FC = () => {
         {
           id: 'ui-ux-design',
           name: 'UI/UX Design using Figma',
-          time: '11:00 AM - 12:30 PM',
+          time: '11:00 AM - 12:25 PM',
           icon: '🎨',
           formUrl: 'https://forms.gle/XHpFB923v7Qu8G2A6',
           rules: [
             'Team size: 2 members',
             'Bring your own laptops',
             'Design based on given problem statement',
-            'Time: 11:00 AM - 12:30 PM'
+            'Time: 11:00 AM - 12:25 PM'
           ]
         },
         {
           id: 'code-debugging',
           name: 'Code Debugging',
-          time: '11:00 AM - 12:30 PM',
+          time: '11:00 AM - 12:25 PM',
           icon: '🐛',
           formUrl: 'https://forms.gle/qMaQx6sEWJWTrCAdA',
           rules: [
             'Team size: 2 members',
             'Two rounds: Round 1 - Identify and fix logical and syntax errors; Round 2 - Code snippet–based debugging',
             'Language: Java',
-            'Time: 11:00 AM – 12:30 PM',
+            'Time: 11:00 AM – 12:25 PM',
             'Teams shortlisted in the first round will proceed to the second round'
           ]
         },
         {
           id: 'cad-tinker',
           name: 'CAD/Tinker CAD',
-          time: '11:00 AM - 12:30 PM',
+          time: '11:00 AM - 12:25 PM',
           icon: '🛠️',
           formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdxf65aYP4eo4H-uHzWA-9YTl9E9Xv4hL-MmdxL086XKieiHQ/viewform?usp=header',
           rules: [
