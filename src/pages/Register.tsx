@@ -16,12 +16,28 @@ interface EventItem {
   name: string;
   time: string;
   icon: string;
+  formUrl?: string;
   rules?: string[];
 }
 
 const EventRegistration: React.FC = () => {
-  const [showRules, setShowRules] = useState(false);
   const [hoveredEventId, setHoveredEventId] = useState<string | null>(null);
+  const [tooltipEvent, setTooltipEvent] = useState<EventItem | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number } | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+  const closeBtnRef = React.useRef<HTMLButtonElement | null>(null);
+
+  const openDetails = (ev: EventItem) => setSelectedEvent(ev);
+  const closeDetails = () => setSelectedEvent(null);
+
+  React.useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeDetails(); };
+    if (selectedEvent) {
+      window.addEventListener('keydown', onKey);
+      setTimeout(() => closeBtnRef.current?.focus(), 0);
+    }
+    return () => window.removeEventListener('keydown', onKey);
+  }, [selectedEvent]);
 
   const eventClusters: EventCluster[] = [
     {
@@ -30,17 +46,20 @@ const EventRegistration: React.FC = () => {
       time: '9:00 AM - 10:30 AM',
       color: '#203a9f',
       formUrl: 'https://forms.gle/pHnFCTRNCKSEED3V8',
-      maxEvents: 2, // ✅ can register 2
+      maxEvents: 2,
       events: [
         {
           id: 'paper-presentation',
           name: 'Paper Presentation',
           time: '9:30 AM - 10:30 AM',
           icon: '📝',
+          formUrl: 'https://forms.gle/d58nLWkqys4cVk4t7',
           rules: [
-            'Max 2 participants per team',
-            '10 min presentation + 5 min Q&A',
-            'PPT/PDF format only'
+            'Team size: 3 members',
+            'Abstract submission mandatory',
+            'Paper title required',
+            'Presentation time: 5 min + 2 min Q&A (total 7 min)',
+            'PPT format only'
           ]
         },
         {
@@ -48,6 +67,7 @@ const EventRegistration: React.FC = () => {
           name: 'Project Presentation',
           time: '9:30 AM - 10:30 AM',
           icon: '💻',
+          formUrl: 'https://forms.gle/9TqHqm7b23zxGXm69',
           rules: [
             'Bring your own prototype',
             '10 min presentation + 5 min Q&A',
@@ -57,11 +77,15 @@ const EventRegistration: React.FC = () => {
         {
           id: 'video-editing',
           name: 'Video Editing',
-          time: '9:00 AM - 10:00 AM',
+          time: '10:00 AM - 11:00 AM',
           icon: '🎬',
+          formUrl: 'https://forms.gle/aJBH5cb3N8BASELV8',
           rules: [
-            'Teams of up to 2',
-            'Raw footage provided',
+            'Team size: 2 members',
+            'Video duration: 30 sec to 1 min',
+            'Event time: 10:00 AM - 11:00 AM',
+            'Theme: Gender equality in leadership, sports, role model',
+            'Raw footage may be provided or create original clips',
             'Submit final clip within time'
           ]
         }
@@ -73,17 +97,19 @@ const EventRegistration: React.FC = () => {
       time: '11:00 AM - 12:30 PM',
       color: '#1c33ccff',
       formUrl: 'https://forms.gle/pm8Mak7Sc52tEL4Y8',
-      maxEvents: 1, // ✅ only 1
+      maxEvents: 1,
       events: [
         {
           id: 'ui-ux-design',
           name: 'UI/UX Design using Figma',
           time: '11:00 AM - 12:30 PM',
           icon: '🎨',
+          formUrl: 'https://forms.gle/XHpFB923v7Qu8G2A6',
           rules: [
-            'Design up to 3 screens',
-            'Mobile app use case',
-            'Time limit: 1h'
+            'Team size: 2 members',
+            'Bring your own laptops',
+            'Design based on given problem statement',
+            'Time: 11:00 AM - 12:30 PM'
           ]
         },
         {
@@ -91,10 +117,13 @@ const EventRegistration: React.FC = () => {
           name: 'Code Debugging',
           time: '11:00 AM - 12:30 PM',
           icon: '🐛',
+          formUrl: 'https://forms.gle/qMaQx6sEWJWTrCAdA',
           rules: [
-            'Solve 3 bugs',
-            'Use provided code base',
-            'Time limit: 1h'
+            'Team size: 2 members',
+            'Two rounds: Round 1 - Identify and fix logical and syntax errors; Round 2 - Code snippet–based debugging',
+            'Language: Java',
+            'Time: 11:00 AM – 12:30 PM',
+            'Teams shortlisted in the first round will proceed to the second round'
           ]
         },
         {
@@ -102,10 +131,11 @@ const EventRegistration: React.FC = () => {
           name: 'CAD/Tinker CAD',
           time: '11:00 AM - 12:30 PM',
           icon: '🛠️',
+          formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdxf65aYP4eo4H-uHzWA-9YTl9E9Xv4hL-MmdxL086XKieiHQ/viewform?usp=header',
           rules: [
-            'Design a small part',
-            'Use TinkerCAD software',
-            'Time limit: 1h'
+            'Team size: 2 members',
+            'Winners selected based on performance/time',
+            'Team limit: 25 teams'
           ]
         }
       ]
@@ -116,17 +146,19 @@ const EventRegistration: React.FC = () => {
       time: '1:30 PM - 2:30 PM',
       color: '#1e2adb',
       formUrl: 'https://forms.gle/ti15g5tqx5nyAJQTA',
-      maxEvents: 1, // ✅ only 1
+      maxEvents: 1,
       events: [
         {
           id: 'logo-design',
           name: 'Logo Design/Poster Design',
           time: '1:30 PM - 2:30 PM',
           icon: '✏️',
+          formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfwMmHSmR_pHJ9iglQAX7nOLQlGdJNAyMgDUQSbSthKRk2b8Q/viewform?usp=publish-editor',
           rules: [
-            'Free theme',
-            'A4 size recommended',
-            'Time limit: 1h'
+            'Individual event',
+            'Two rounds: Round 1 - Logo Designing; Round 2 - Poster Designing',
+            'Shortlisting from Round 1 to Round 2',
+            'Time: 1:30 PM - 2:30 PM'
           ]
         },
         {
@@ -134,6 +166,7 @@ const EventRegistration: React.FC = () => {
           name: 'Connections',
           time: '1:30 PM - 2:30 PM',
           icon: '🧩',
+          formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSffczIOsP80WiWpdcEg2HvA9za5oMx5uKb1EwrzPmRKVDewvw/viewform?usp=publish-editor',
           rules: [
             'Team game',
             'Solve visual puzzles',
@@ -147,8 +180,8 @@ const EventRegistration: React.FC = () => {
       title: 'Treasure Hunt',
       time: '2:30 PM - 3:30 PM',
       color: '#00064f',
-      formUrl: 'https://forms.gle/oT2KW9dsRAFc92Sh6',
-      maxEvents: 1, // ✅ only 1
+      formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScpTeaSW_pwY3vf3ew3l414u4AJu-su5FGSvXs5aTnl61xlKQ/viewform?usp=publish-editor',
+      maxEvents: 1,
       events: [
         {
           id: 'treasure-hunt',
@@ -156,22 +189,66 @@ const EventRegistration: React.FC = () => {
           time: '2:30 PM - 3:30 PM',
           icon: '🏆',
           rules: [
-            'Team of 2–3 members',
-            'Solve clues in campus',
-            'First team wins'
+            'Team size: maximum 6 members',
+            'Time: 2:30 PM - 3:30 PM',
+            'Zone: only on G 9',
+            'Total treasures: 6',
+            'Solve clues in campus; first team wins'
           ]
         }
       ]
     }
   ];
 
-  const handleRegister = (formUrl: string) => {
-    window.open(formUrl, '_blank');
+  const handleRegister = (formUrl: string, eventId?: string) => {
+    let url = formUrl;
+    if (eventId) {
+      url += (formUrl.includes('?') ? '&' : '?') + `event=${encodeURIComponent(eventId)}`;
+    }
+    window.open(url, '_blank');
   };
 
-  const toggleRules = () => {
-    setShowRules(!showRules);
+  const showTooltip = (e: React.MouseEvent<HTMLElement> | React.FocusEvent<HTMLElement>, ev: EventItem) => {
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    setTooltipPos({ top: rect.top - 8 - window.scrollY, left: rect.left + rect.width / 2 });
+    setTooltipEvent(ev);
+    setHoveredEventId(ev.id);
   };
+
+  const hideTooltip = () => {
+    setTooltipEvent(null);
+    setTooltipPos(null);
+    setHoveredEventId(null);
+  };
+
+  const getFormUrlForEvent = (eventId: string) => {
+    for (const c of eventClusters) {
+      const event = c.events.find(e => e.id === eventId);
+      if (event?.formUrl) {
+        return event.formUrl;
+      }
+    }
+    
+    for (const c of eventClusters) {
+      if (c.events.some(e => e.id === eventId)) return c.formUrl;
+    }
+    
+    return eventClusters[0]?.formUrl || '';
+  };
+
+  const getStartMinutes = (timeRange: string) => {
+    const match = timeRange.match(/^\s*(\d{1,2}:?\d{0,2})\s*(AM|PM)/i);
+    if (!match) return 0;
+    const [, time, ampm] = match;
+    const parts = time.split(':').map(Number);
+    let h = parts[0];
+    const m = parts[1] || 0;
+    if (ampm.toUpperCase() === 'PM' && h !== 12) h += 12;
+    if (ampm.toUpperCase() === 'AM' && h === 12) h = 0;
+    return h * 60 + m;
+  };
+
+  const sortedClusters = [...eventClusters].sort((a, b) => getStartMinutes(a.time) - getStartMinutes(b.time));
 
   return (
     <div className="event-registration-container">
@@ -180,46 +257,11 @@ const EventRegistration: React.FC = () => {
       <div className="header">
         <h1>Event Registration</h1>
         <p>Register for exciting events happening today!</p>
-        <button className="rules-btn" onClick={toggleRules}>
-          📋 Event Rules
-        </button>
-      </div>
-
-      {showRules && (
-        <div className="rules-modal">
-          <div className="rules-content">
-            <h2>Event Rules & Guidelines</h2>
-            <div className="rules-list">
-              <h3>General Rules:</h3>
-              <ul>
-                <li>All participants must register before the event starts</li>
-                <li>Each participant can register for one event per time slot</li>
-                <li>Participants must arrive 15 minutes before their event</li>
-                <li>Judges' decisions are final</li>
-              </ul>
-              <h3>Technical Events:</h3>
-              <ul>
-                <li>Bring your own laptop for coding events</li>
-                <li>Pre-install required software (Figma, CAD tools, etc.)</li>
-                <li>Internet access will be provided but limited</li>
-              </ul>
-              <h3>Presentation Events:</h3>
-              <ul>
-                <li>Time limit: 10 minutes presentation + 5 minutes Q&A</li>
-                <li>Bring your presentation on a USB drive</li>
-                <li>PPT/PDF format only</li>
-              </ul>
-            </div>
-            <button className="close-rules" onClick={toggleRules}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      </div> 
 
       <div className="content-wrapper">
         <div className="form-container">
-          {eventClusters.map(cluster => (
+          {sortedClusters.map(cluster => (
             <div
               key={cluster.id}
               className={`cluster cluster-${cluster.id.slice(-1)}`}
@@ -232,7 +274,6 @@ const EventRegistration: React.FC = () => {
                 </span>
               </div>
 
-              {/* ✅ Registration note */}
               <p className="registration-note">
                 👉 You can register for {cluster.maxEvents} {cluster.maxEvents > 1 ? 'events' : 'event'} in this slot.
               </p>
@@ -242,8 +283,6 @@ const EventRegistration: React.FC = () => {
                   <div
                     key={event.id}
                     className="event-item"
-                    onMouseEnter={() => setHoveredEventId(event.id)}
-                    onMouseLeave={() => setHoveredEventId(null)}
                   >
                     <div className="event-icon">{event.icon}</div>
                     <div className="event-details">
@@ -251,27 +290,62 @@ const EventRegistration: React.FC = () => {
                       <div className="event-time">{event.time}</div>
                     </div>
 
-                    {hoveredEventId === event.id && event.rules && (
-                      <div className="event-tooltip">
-                        <h4>Rules:</h4>
-                        <ul>
-                          {event.rules.map((rule, idx) => (
-                            <li key={idx}>{rule}</li>
-                          ))}
-                        </ul>
+                    <div className="event-actions">
+                      <button
+                        type="button"
+                        className="event-details-btn"
+                        onClick={() => openDetails(event)}
+                        aria-label={`Show details for ${event.name}`}
+                      >
+                        Details
+                      </button>
+
+                      <button
+                        type="button"
+                        className="event-register-btn"
+                        onClick={() => handleRegister(event.formUrl || cluster.formUrl, event.id)}
+                        style={{ backgroundColor: cluster.color }}
+                      >
+                        Register
+                      </button>
+                    </div>
+
+                    {selectedEvent?.id === event.id && (
+                      <div className="incard-overlay" onClick={closeDetails}>
+                        <div className="incard-details" onClick={(e) => e.stopPropagation()}>
+                          <header className="incard-header">
+                            <h3>{selectedEvent.name}</h3>
+                            <button ref={closeBtnRef} type="button" className="incard-close" onClick={closeDetails} aria-label="Close">✕</button>
+                          </header>
+                          <div className="incard-body">
+                            <p className="modal-time">Time: <strong>{selectedEvent.time}</strong></p>
+                            {selectedEvent.rules && (
+                              <div className="modal-rules">
+                                <h4>Guidelines</h4>
+                                <ul>
+                                  {selectedEvent.rules.map((r, i) => <li key={i}>{r}</li>)}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                          <div className="incard-actions">
+                            <button 
+                              className="event-register-btn" 
+                              style={{ backgroundColor: cluster.color }}
+                              onClick={() => { 
+                                closeDetails(); 
+                                handleRegister(getFormUrlForEvent(event.id), event.id); 
+                              }}
+                            >
+                              Register for this event
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
-
-              <button
-                className="btn-register"
-                onClick={() => handleRegister(cluster.formUrl)}
-                style={{ backgroundColor: cluster.color }}
-              >
-                Register for {cluster.title}
-              </button>
             </div>
           ))}
         </div>
@@ -326,76 +400,7 @@ const EventRegistration: React.FC = () => {
           opacity: 0.9;
           margin-bottom: 15px;
         }
-        .rules-btn {
-          background: rgba(255,255,255,0.2);
-          color: white;
-          border: 2px solid white;
-          padding: 10px 20px;
-          border-radius: 30px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: var(--transition);
-          backdrop-filter: blur(5px);
-        }
-        .rules-btn:hover {
-          background: rgba(255,255,255,0.3);
-          transform: translateY(-2px);
-        }
-        .rules-modal {
-          position: fixed;
-          top: 0; left: 0;
-          width: 100vw;
-          height: 100vh;
-          background: rgba(0,0,0,0.7);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 1000;
-          animation: fadeIn 0.3s ease;
-        }
-        .rules-content {
-          background: white;
-          border-radius: 15px;
-          padding: 30px;
-          max-width: 600px;
-          width: 90%;
-          max-height: 80vh;
-          overflow-y: auto;
-          box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-          animation: slideUp 0.4s ease;
-        }
-        .rules-content h2 {
-          color: var(--primary);
-          margin-bottom: 20px;
-          text-align: center;
-        }
-        .rules-list h3 {
-          color: var(--secondary);
-          margin: 15px 0 10px;
-        }
-        .rules-list ul {
-          margin-left: 20px;
-          margin-bottom: 15px;
-        }
-        .rules-list li {
-          margin-bottom: 8px;
-          line-height: 1.5;
-        }
-        .close-rules {
-          background: var(--primary);
-          color: white;
-          padding: 10px 25px;
-          border-radius: 30px;
-          font-weight: 600;
-          cursor: pointer;
-          display: block;
-          margin: 20px auto 0;
-          transition: var(--transition);
-        }
-        .close-rules:hover {
-          background: var(--secondary);
-          transform: translateY(-2px);
-        }
+
         .form-container {
           padding: 30px;
           width: 100%;
@@ -446,9 +451,9 @@ const EventRegistration: React.FC = () => {
           border-radius: 6px;
         }
         .events-container {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-          gap: 15px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
           margin-bottom: 20px;
         }
         .event-item {
@@ -457,6 +462,9 @@ const EventRegistration: React.FC = () => {
           padding: 15px;
           display: flex;
           align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          width: 100%;
           box-shadow: 0 3px 10px rgba(0, 6, 79, 0.10);
           transition: var(--transition);
           position: relative;
@@ -482,6 +490,34 @@ const EventRegistration: React.FC = () => {
           color: var(--gray);
           font-size: 0.9rem;
         }
+        .incard-overlay {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0,0,0,0.36);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 999;
+          border-radius: 8px;
+        }
+        .incard-details {
+          background: white;
+          width: min(520px, 90%);
+          max-height: 80vh;
+          overflow-y: auto;
+          border-radius: 12px;
+          padding: 18px;
+          box-shadow: 0 18px 40px rgba(0,6,79,0.25);
+          position: relative;
+          animation: slideUp 0.25s ease;
+        }
+        .incard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .incard-header h3 { margin: 0; color: var(--primary); }
+        .incard-close { background: transparent; border: none; font-size: 1.1rem; cursor: pointer; color: var(--gray); }
+        .incard-body { color: var(--dark); font-size: 0.95rem; }
+        .incard-actions { margin-top: 12px; display: flex; justify-content: flex-end; gap: 8px; }
+        @media (max-width: 480px) { .incard-details { width: calc(100% - 20px); padding: 14px; } }
+
         .event-tooltip {
           position: absolute;
           top: 100%;
@@ -504,6 +540,21 @@ const EventRegistration: React.FC = () => {
         .event-tooltip ul {
           padding-left: 18px;
           margin: 0;
+        }
+        .event-register-btn {
+          color: #ffffff;
+          padding: 8px 12px;
+          border-radius: 10px;
+          font-weight: 700;
+          cursor: pointer;
+          border: none;
+          margin-left: 12px;
+          transition: var(--transition);
+          box-shadow: 0 4px 10px rgba(0, 6, 79, 0.12);
+        }
+        .event-register-btn:hover {
+          transform: translateY(-2px);
+          filter: brightness(0.95);
         }
         .btn-register {
           background: linear-gradient(135deg, var(--primary), var(--secondary));

@@ -37,9 +37,8 @@ const Events = () => {
     {
       id: 2,
       title: "Prometheus '25 - Intra College Symposium",
-      date: "September 13, 2025",
-      time: "9:00 AM - 5:00 PM",
-      location: "Conference Hall",
+      date: "Feb 16, 2026",
+      time: "9:00 AM - 4:30 PM",
       description: "Technical symposium with presentations and competitions.",
       status: "ongoing",
       category: "Symposium",

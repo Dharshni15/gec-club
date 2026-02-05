@@ -1,0 +1,60 @@
+/* Lilac Dreamer palette applied to clusters — soft pastel columns */
+
+/* Palette reference (left-to-right):
+   col-a: #E6EBFF  (pale periwinkle)
+   col-b: #F3E8FF  (pale lilac)
+   col-c: #FCE8EC  (soft pink)
+   col-d: #EDE6FF  (soft lavender)
+*/
+
+.cluster-1 {
+  border-left-color: #D9D6FF;
+  background: linear-gradient(180deg,#F0F3FF 0%, #E6EBFF 100%);
+}
+.cluster-1 .event-icon {
+  background: linear-gradient(135deg,#E6EBFF 0%, #D6C9FF 100%);
+  color: #3a2a6a;
+  box-shadow: 0 12px 36px rgba(72,62,150,0.10);
+}
+.cluster-1 .time-badge { background: #DEE6FF; color:#3a2a6a; box-shadow: 0 8px 22px rgba(72,62,150,0.06); }
+.cluster-1 .event-register-btn { background: linear-gradient(90deg,#CFCBFF,#AFA0FF); color:#2b1f58; box-shadow: 0 12px 36px rgba(96,84,210,0.10); }
+.cluster-1 .event-register-btn:hover { transform: translateY(-3px) scale(1.02); filter: brightness(0.96); }
+
+.cluster-2 {
+  border-left-color: #F5DFF4;
+  background: linear-gradient(180deg,#FFF6FB 0%, #FCE8FF 100%);
+}
+.cluster-2 .event-icon {
+  background: linear-gradient(135deg,#F7E6FF 0%, #F4CFEF 100%);
+  color:#5b234a;
+  box-shadow: 0 12px 36px rgba(200,120,180,0.08);
+}
+.cluster-2 .time-badge { background: #FFEAF6; color:#5b234a; box-shadow: 0 8px 22px rgba(200,120,180,0.06); }
+.cluster-2 .event-register-btn { background: linear-gradient(90deg,#FFD7F0,#FFB1DE); color:#481b3a; box-shadow: 0 12px 36px rgba(220,100,170,0.10); }
+.cluster-2 .event-register-btn:hover { transform: translateY(-3px) scale(1.02); filter: brightness(0.96); }
+
+.cluster-3 {
+  border-left-color: #FFECEC;
+  background: linear-gradient(180deg,#FFF9FA 0%, #FCE8EC 100%);
+}
+.cluster-3 .event-icon {
+  background: linear-gradient(135deg,#FFF0F4 0%, #FFDCE6 100%);
+  color:#5a2533;
+  box-shadow: 0 12px 36px rgba(200,80,100,0.06);
+}
+.cluster-3 .time-badge { background: #FFEFEF; color:#5a2533; box-shadow: 0 8px 22px rgba(200,80,100,0.05); }
+.cluster-3 .event-register-btn { background: linear-gradient(90deg,#FFD6E0,#FF9DB8); color:#4a1a2a; box-shadow: 0 12px 36px rgba(210,90,130,0.10); }
+.cluster-3 .event-register-btn:hover { transform: translateY(-3px) scale(1.02); filter: brightness(0.96); }
+
+.cluster-4 {
+  border-left-color: #E8E0FF;
+  background: linear-gradient(180deg,#F4F1FF 0%, #EDE6FF 100%);
+}
+.cluster-4 .event-icon {
+  background: linear-gradient(135deg,#EDE6FF 0%, #DAD0FF 100%);
+  color:#2f2a60;
+  box-shadow: 0 12px 36px rgba(88,82,160,0.08);
+}
+.cluster-4 .time-badge { background: #F0E9FF; color:#2f2a60; box-shadow: 0 8px 22px rgba(88,82,160,0.06); }
+.cluster-4 .event-register-btn { background: linear-gradient(90deg,#DDD6FF,#BFB3FF); color:#23184f; box-shadow: 0 12px 36px rgba(110,100,200,0.10); }
+.cluster-4 .event-register-btn:hover { transform: translateY(-3px) scale(1.02); filter: brightness(0.96); }
