@@ -256,7 +256,7 @@ const EventRegistration: React.FC = () => {
 
       <div className="header">
         <h1>Event Registration</h1>
-        <p>Register for exciting events happening today!</p>
+        <p>Register for exciting events!</p>
       </div> 
 
       <div className="content-wrapper">
