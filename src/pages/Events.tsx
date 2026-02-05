@@ -36,7 +36,7 @@ const Events = () => {
     },
     {
       id: 2,
-      title: "Prometheus '25 - Intra College Symposium",
+      title: "Prometheus '26 - Inter Department Symposium",
       date: "Feb 16, 2026",
       time: "9:00 AM - 4:30 PM",
       location: "Jawaharlal Nehru Auditorium",
