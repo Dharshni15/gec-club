@@ -189,7 +189,7 @@ const EventRegistration: React.FC = () => {
           time: '2:30 PM - 3:30 PM',
           icon: '🏆',
           rules: [
-            'Team size: maximum 6 members',
+            'Team size: 4 members',
             'Time: 2:30 PM - 3:30 PM',
             'Zone: only on G 9',
             'Total treasures: 6',
