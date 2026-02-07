@@ -516,7 +516,25 @@ const EventRegistration: React.FC = () => {
         .incard-close { background: transparent; border: none; font-size: 1.1rem; cursor: pointer; color: var(--gray); }
         .incard-body { color: var(--dark); font-size: 0.95rem; }
         .incard-actions { margin-top: 12px; display: flex; justify-content: flex-end; gap: 8px; }
-        @media (max-width: 480px) { .incard-details { width: calc(100% - 20px); padding: 14px; } }
+
+        @media (max-width: 768px) {
+          .event-item { flex-direction: column; align-items: stretch; padding: 12px; }
+          .event-actions { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+          .event-details-btn, .event-register-btn { width: 100%; padding: 10px 12px; }
+          .event-icon { width: 48px; height: 48px; min-width: 48px; }
+          .time-badge { align-self: flex-start; }
+          .incard-actions { flex-direction: column; align-items: stretch; }
+        }
+
+        @media (max-width: 480px) {
+          .incard-details { width: calc(100% - 24px); padding: 14px; }
+          .incard-overlay { position: fixed; inset: 0; border-radius: 0; }
+          .incard-details { max-height: 92vh; border-radius: 8px; }
+          .incard-actions { gap: 8px; }
+          .incard-actions .event-register-btn { width: 100%; }
+          .header h1 { font-size: 1.5rem; }
+          .header p { font-size: 0.95rem; }
+        }
 
         .event-tooltip {
           position: absolute;
