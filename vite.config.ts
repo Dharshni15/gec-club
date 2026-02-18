@@ -19,4 +19,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Allow importing a few non-JS asset types (docx, pdf) from the project
+  assetsInclude: ["**/*.docx", "**/*.pdf"],
 }));
