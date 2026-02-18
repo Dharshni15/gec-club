@@ -41,7 +41,12 @@ const Odlist = () => {
           </div>
 
           <div className="mt-6 p-6 rounded-xl border bg-card text-card-foreground shadow-sm">
-            <h2 className="text-xl font-semibold mb-3">Prometheus</h2>
+            <h2 className="text-xl font-semibold mb-3">
+              Prometheus
+              <span className="ml-3 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                Completed
+              </span>
+            </h2>
             <p className="text-muted-foreground mb-4">
               Prometheus is our inter-department symposium. Below are the events
               featured in Prometheus.

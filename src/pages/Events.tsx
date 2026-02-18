@@ -41,9 +41,9 @@ const Events = () => {
       time: "9:00 AM - 4:30 PM",
       location: "Jawaharlal Nehru Auditorium",
       description: "Technical symposium with presentations and competitions.",
-      status: "ongoing",
+      status: "completed",
       category: "Symposium",
-      image: "/api/placeholder/400/200?text=Prometheus+25",
+      image: "/api/placeholder/400/200?text=Prometheus+26",
       highlights: ["Technical Presentations", "Competitions", "Prizes"]
     },
     {
